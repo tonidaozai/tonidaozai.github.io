@@ -16,6 +16,153 @@
       --text-secondary: #666666;
       --text-muted: #999999;
       --border: #e5e5e5;
+      --primary: #E60012;
+      --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
+      --ease-in-out-quint: cubic-bezier(0.86, 0, 0.07, 1);
+    }
+    
+    /* ========== ANIMATIONS ========== */
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+    
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+    
+    @keyframes scaleIn {
+      from {
+        opacity: 0;
+        transform: scale(0.9);
+      }
+      to {
+        opacity: 1;
+        transform: scale(1);
+      }
+    }
+    
+    @keyframes slideInRight {
+      from {
+        opacity: 0;
+        transform: translateX(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateX(0);
+      }
+    }
+    
+    @keyframes typewriter {
+      from { width: 0; }
+      to { width: 100%; }
+    }
+    
+    @keyframes blink {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0; }
+    }
+    
+    @keyframes float {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-5px); }
+    }
+    
+    /* Page load animations */
+    .animate-on-load {
+      opacity: 0;
+      animation: fadeInUp 0.8s var(--ease-out-expo) forwards;
+    }
+    
+    .animate-on-load:nth-child(1) { animation-delay: 0.1s; }
+    .animate-on-load:nth-child(2) { animation-delay: 0.2s; }
+    .animate-on-load:nth-child(3) { animation-delay: 0.3s; }
+    .animate-on-load:nth-child(4) { animation-delay: 0.4s; }
+    .animate-on-load:nth-child(5) { animation-delay: 0.5s; }
+    
+    /* Scroll reveal */
+    .reveal {
+      opacity: 0;
+      transform: translateY(40px);
+      transition: all 0.8s var(--ease-out-expo);
+    }
+    
+    .reveal.active {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    
+    /* Hover effects */
+    .hover-lift {
+      transition: transform 0.3s var(--ease-out-expo), box-shadow 0.3s ease;
+    }
+    
+    .hover-lift:hover {
+      transform: translateY(-4px);
+    }
+    
+    /* Link underline animation */
+    .link-animate {
+      position: relative;
+      display: inline-block;
+    }
+    
+    .link-animate::after {
+      content: '';
+      position: absolute;
+      bottom: -2px;
+      left: 0;
+      width: 0;
+      height: 1px;
+      background: var(--primary);
+      transition: width 0.3s var(--ease-out-expo);
+    }
+    
+    .link-animate:hover::after {
+      width: 100%;
+    }
+    
+    /* Avatar hover effect */
+    .avatar-hover {
+      transition: transform 0.5s var(--ease-out-expo), filter 0.3s ease;
+    }
+    
+    .avatar-hover:hover {
+      transform: scale(1.05);
+      filter: brightness(1.05);
+    }
+    
+    /* Language button active state animation */
+    .lang-btn {
+      transition: all 0.3s var(--ease-out-expo);
+    }
+    
+    .lang-btn:hover {
+      transform: translateY(-2px);
+    }
+    
+    /* Work card hover */
+    .work-item {
+      transition: all 0.4s var(--ease-out-expo);
+    }
+    
+    .work-item:hover {
+      transform: translateY(-8px);
+    }
+    
+    .work-item:hover .work-video {
+      transform: scale(1.02);
+    }
+    
+    .work-video {
+      transition: transform 0.5s var(--ease-out-expo);
     }
     
     html { scroll-behavior: smooth; font-size: 16px; }
@@ -324,25 +471,25 @@
   <!-- Hero -->
   <section class="hero">
     <div class="hero-content">
-      <div class="avatar-wrap">
-        <div class="avatar">
+      <div class="avatar-wrap animate-on-load">
+        <div class="avatar avatar-hover">
           <img src="/images/shuaiduosun.jpg" alt="Shuaiduo Sun">
         </div>
       </div>
       <div class="intro-section">
-        <h1 class="name-main" data-i18n="nameMain">Shuaiduo Sun</h1>
-        <p class="role-label" data-i18n="roleLabel"></p>
-        <p class="intro-name" data-i18n="introName"></p>
-        <p class="intro-desc" data-i18n="introDesc">Systems Designer / Level Designer<br><br>- Experience in UE4 system and level design<br>- Strong ability to integrate data and gameplay<br>- Proven experience delivering large-scale projects</p>
-        <div class="tags">
+        <h1 class="name-main animate-on-load" data-i18n="nameMain">Shuaiduo Sun</h1>
+        <p class="role-label animate-on-load" data-i18n="roleLabel"></p>
+        <p class="intro-name animate-on-load" data-i18n="introName"></p>
+        <p class="intro-desc animate-on-load" data-i18n="introDesc">Systems Designer / Level Designer<br><br>- Experience in UE4 system and level design<br>- Strong ability to integrate data and gameplay<br>- Proven experience delivering large-scale projects</p>
+        <div class="tags animate-on-load">
           <span class="tag" data-i18n="tag1"></span>
           <span class="tag" data-i18n="tag2"></span>
           <span class="tag" data-i18n="tag3"></span>
         </div>
-        <div class="social-links">
-          <a href="mailto:shuaiduosun@gmail.com">Email</a>
-          <a href="https://www.linkedin.com/in/%E5%B8%85%E5%A4%9A-%E5%AD%99-316a60124">LinkedIn</a>
-          <a href="https://space.bilibili.com/6414199">Bilibili</a>
+        <div class="social-links animate-on-load">
+          <a class="link-animate" href="mailto:shuaiduosun@gmail.com">Email</a>
+          <a class="link-animate" href="https://www.linkedin.com/in/%E5%B8%85%E5%A4%9A-%E5%AD%99-316a60124">LinkedIn</a>
+          <a class="link-animate" href="https://space.bilibili.com/6414199">Bilibili</a>
         </div>
       </div>
     </div>
@@ -350,9 +497,9 @@
 
   <!-- Works -->
   <section class="works">
-    <p class="section-title" data-i18n="worksTitle">Selected Works</p>
+    <p class="section-title reveal" data-i18n="worksTitle">Selected Works</p>
     <div class="works-grid">
-      <div class="work-item">
+      <div class="work-item reveal hover-lift">
         <video class="work-video" poster="/video/yuanmengzhixing-cover-new.webp" controls muted loop playsinline>
           <source src="/video/yuanmengzhixing.mp4" type="video/mp4">
         </video>
@@ -361,7 +508,7 @@
           <p class="work-desc" data-i18n="work1Desc">Party Game</p>
         </div>
       </div>
-      <div class="work-item">
+      <div class="work-item reveal hover-lift">
         <video class="work-video" poster="/video/qqxiaowo-cover-new.jpg" controls muted loop playsinline>
           <source src="/video/qqxiaowo.mp4" type="video/mp4">
         </video>
@@ -377,9 +524,9 @@
   <footer>
     <p class="footer-text">© 2026 Shuaiduo Sun</p>
     <div class="footer-links">
-      <a href="mailto:shuaiduosun@gmail.com">Email</a>
-      <a href="https://www.linkedin.com/in/%E5%B8%85%E5%A4%9A-%E5%AD%99-316a60124">LinkedIn</a>
-      <a href="https://space.bilibili.com/6414199">Bilibili</a>
+      <a class="link-animate" href="mailto:shuaiduosun@gmail.com">Email</a>
+      <a class="link-animate" href="https://www.linkedin.com/in/%E5%B8%85%E5%A4%9A-%E5%AD%99-316a60124">LinkedIn</a>
+      <a class="link-animate" href="https://space.bilibili.com/6414199">Bilibili</a>
     </div>
   </footer>
 
@@ -458,6 +605,32 @@
     if (['ja', 'en', 'zh'].includes(hash)) {
       updateLanguage(hash);
     }
+
+    // Scroll reveal animation
+    const observerOptions = {
+      threshold: 0.1,
+      rootMargin: '0px 0px -50px 0px'
+    };
+    
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('active');
+        }
+      });
+    }, observerOptions);
+    
+    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+    
+    // Smooth scroll for internal links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        document.querySelector(this.getAttribute('href')).scrollIntoView({
+          behavior: 'smooth'
+        });
+      });
+    });
   </script>
 </body>
 </html>
