@@ -1,7 +1,439 @@
-<!DOCTYPE html><html lang="ja"> <head><meta charset="UTF-8"><meta name="description" content="Shuaiduo Sun - Game Planner Portfolio"><meta name="viewport" content="width=device-width"><link rel="icon" type="image/svg+xml" href="/favicon.svg"><meta name="generator" content="Astro v6.1.6"><title>Shuaiduo Sun - Game Planner</title><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&family=Noto+Sans+SC:wght@400;500;700&family=Noto+Sans:wght@400;500;700&display=swap" rel="stylesheet"><link rel="stylesheet" href="/_astro/Layout.DgcL2IJR.css"></head> <body> <!-- Navigation --> <nav class="fixed top-0 left-0 right-0 z-50 bg-white/80 backdrop-blur-md border-b border-gray-100"> <div class="max-w-6xl mx-auto px-4 sm:px-6"> <div class="flex items-center justify-between h-16"> <!-- Logo --> <a href="/" class="flex items-center gap-2"> <span class="text-xl font-bold text-gray-900">Shuaiduo Sun</span> </a> <!-- Desktop Nav --> <div class="hidden md:flex items-center gap-8"> <a href="/" class="nav-link text-red-600"> ホーム </a><a href="/about" class="nav-link "> 自己紹介 </a><a href="/experience" class="nav-link "> 経歴 </a><a href="/portfolio" class="nav-link "> ポートフォリオ </a><a href="/contact" class="nav-link "> お問い合わせ </a> </div> <!-- Language Switcher --> <div class="lang-switcher"> <a href="//" class="lang-btn active"> JA </a><a href="/en/" class="lang-btn "> EN </a><a href="/zh/" class="lang-btn "> ZH </a> </div> </div> </div> </nav> <!-- Main Content --> <main class="pt-16">   <section class="min-h-[90vh] flex items-center justify-center relative overflow-hidden"> <!-- Background Pattern --> <div class="absolute inset-0 opacity-5"> <div class="absolute inset-0" style="background-image: radial-gradient(circle at 1px 1px, #000 1px, transparent 0); background-size: 40px 40px;"></div> </div> <div class="max-w-4xl mx-auto px-4 text-center relative z-10"> <!-- Avatar --> <div class="mb-8"> <div class="w-32 h-32 mx-auto rounded-full bg-gradient-to-br from-red-500 to-blue-600 flex items-center justify-center text-4xl font-bold text-white shadow-xl">
-S
-</div> </div> <!-- Name & Title --> <h1 class="text-5xl md:text-7xl font-bold mb-4 tracking-tight"> 孫 帥多 </h1> <p class="text-xl md:text-2xl text-gray-600 mb-2">ゲームプランナー</p> <p class="text-lg text-gray-500 mb-8">プレイヤーに忘れられない体験を届ける</p> <!-- CTA Buttons --> <div class="flex flex-col sm:flex-row gap-4 justify-center"> <a href="//portfolio" class="btn btn-primary"> 作品を見る →
-</a> <a href="//contact" class="btn btn-outline">
-Contact
-</a> </div> </div> <!-- Scroll Indicator --> <div class="absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce"> <svg class="w-6 h-6 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"> <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"></path> </svg> </div> </section>  <section class="section bg-white"> <div class="max-w-4xl mx-auto"> <h2 class="section-title text-center">自己紹介</h2> <p class="section-subtitle mx-auto text-center"> ゲームとテクノロジーに情熱を持つゲームプランナーです。プレイヤーに忘れられない体験を届けることを使命としています。 </p> <div class="text-center mt-8"> <a href="//about" class="btn btn-outline"> 自己紹介 →
-</a> </div> </div> </section>  <section class="section bg-white"> <div class="max-w-5xl mx-auto"> <h2 class="section-title text-center mb-2"> 作品動画 </h2> <p class="text-center text-gray-500 mb-12"> 参加したゲームプロジェクト </p> <div class="grid grid-cols-1 md:grid-cols-2 gap-8"> <!-- Video 1: 元梦之星 --> <div class="rounded-2xl overflow-hidden shadow-lg bg-gray-50"> <video class="w-full aspect-video object-cover" controls preload="metadata" poster="/video/yuanmengzhixing-thumb.jpg"> <source src="/video/yuanmengzhixing.mp4" type="video/mp4"> </video> <div class="p-4"> <h3 class="font-bold text-lg mb-1">元梦之星</h3> <p class="text-gray-500 text-sm"> ゲーム企画・デザイン </p> </div> </div> <!-- Video 2: QQ小窝 --> <div class="rounded-2xl overflow-hidden shadow-lg bg-gray-50"> <video class="w-full aspect-video object-cover" controls preload="metadata" poster="/video/qqxiaowo-thumb.jpg"> <source src="/video/qqxiaowo.mp4" type="video/mp4"> </video> <div class="p-4"> <h3 class="font-bold text-lg mb-1">QQ小窝</h3> <p class="text-gray-500 text-sm"> ゲーム企画・UX設計 </p> </div> </div> </div> </div> </section>  <section class="section"> <div class="max-w-4xl mx-auto"> <h2 class="section-title text-center mb-12">Skills</h2> <div class="grid grid-cols-2 md:grid-cols-3 gap-4"> <div class="card text-center"> <span class="font-medium">Unity</span> </div><div class="card text-center"> <span class="font-medium">Game Design</span> </div><div class="card text-center"> <span class="font-medium">Excel</span> </div><div class="card text-center"> <span class="font-medium">Documentation</span> </div><div class="card text-center"> <span class="font-medium">Teamwork</span> </div><div class="card text-center"> <span class="font-medium">Communication</span> </div> </div> </div> </section>  </main> <!-- Footer --> <footer> <div class="max-w-6xl mx-auto px-4 text-center"> <p class="text-sm opacity-80">© 2024 Shuaiduo Sun. All rights reserved.</p> </div> </footer> </body></html>
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>孫 帥多 | ゲームプランナー</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Zen+Kaku+Gothic+New:wght@400;500;700;900&family=Inter:wght@400;500;600;700&family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    
+    :root {
+      --bg-primary: #09090b;
+      --bg-secondary: #18181b;
+      --bg-card: #27272a;
+      --accent: #f97316;
+      --accent-glow: rgba(249, 115, 22, 0.4);
+      --text-primary: #fafafa;
+      --text-secondary: #a1a1aa;
+      --text-muted: #71717a;
+      --border: #3f3f46;
+    }
+    
+    html {
+      scroll-behavior: smooth;
+      font-size: 16px;
+    }
+    
+    body {
+      font-family: 'Noto Sans JP', 'Inter', sans-serif;
+      background: var(--bg-primary);
+      color: var(--text-primary);
+      line-height: 1.7;
+      min-height: 100vh;
+      overflow-x: hidden;
+    }
+    
+    /* Scrollbar */
+    ::-webkit-scrollbar { width: 6px; }
+    ::-webkit-scrollbar-track { background: var(--bg-primary); }
+    ::-webkit-scrollbar-thumb { background: var(--border); border-radius: 3px; }
+    ::-webkit-scrollbar-thumb:hover { background: var(--text-muted); }
+    
+    /* Nav */
+    nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 100;
+      padding: 1rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: linear-gradient(to bottom, rgba(9,9,11,0.95), transparent);
+      backdrop-filter: blur(12px);
+    }
+    
+    .logo {
+      font-family: 'Zen Kaku Gothic New', sans-serif;
+      font-weight: 700;
+      font-size: 1.125rem;
+      color: var(--text-primary);
+      text-decoration: none;
+      letter-spacing: 0.05em;
+    }
+    
+    .lang-switch {
+      display: flex;
+      gap: 0.25rem;
+      background: rgba(255,255,255,0.05);
+      padding: 0.25rem;
+      border-radius: 8px;
+      border: 1px solid var(--border);
+    }
+    
+    .lang-switch a {
+      padding: 0.375rem 0.75rem;
+      font-size: 0.75rem;
+      font-weight: 500;
+      color: var(--text-muted);
+      text-decoration: none;
+      border-radius: 6px;
+      transition: all 0.2s;
+    }
+    
+    .lang-switch a:hover {
+      color: var(--text-primary);
+    }
+    
+    .lang-switch a.active {
+      background: var(--accent);
+      color: var(--bg-primary);
+    }
+    
+    /* Hero */
+    .hero {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 6rem 2rem 4rem;
+      position: relative;
+      overflow: hidden;
+    }
+    
+    /* Background gradient orbs */
+    .hero::before,
+    .hero::after {
+      content: '';
+      position: absolute;
+      border-radius: 50%;
+      filter: blur(120px);
+      opacity: 0.5;
+      pointer-events: none;
+    }
+    
+    .hero::before {
+      width: 600px;
+      height: 600px;
+      background: radial-gradient(circle, var(--accent-glow), transparent 70%);
+      top: -200px;
+      right: -200px;
+    }
+    
+    .hero::after {
+      width: 500px;
+      height: 500px;
+      background: radial-gradient(circle, rgba(59,130,246,0.3), transparent 70%);
+      bottom: -150px;
+      left: -150px;
+    }
+    
+    .hero-content {
+      position: relative;
+      z-index: 1;
+      max-width: 800px;
+    }
+    
+    /* Avatar */
+    .avatar {
+      width: 120px;
+      height: 120px;
+      margin: 0 auto 2.5rem;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--accent), #fb923c);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: 'Zen Kaku Gothic New', sans-serif;
+      font-size: 3rem;
+      font-weight: 900;
+      color: var(--bg-primary);
+      box-shadow: 0 0 60px var(--accent-glow);
+      animation: float 6s ease-in-out infinite;
+    }
+    
+    @keyframes float {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-10px); }
+    }
+    
+    /* Name */
+    .hero h1 {
+      font-family: 'Zen Kaku Gothic New', sans-serif;
+      font-size: clamp(3rem, 8vw, 5rem);
+      font-weight: 900;
+      letter-spacing: 0.1em;
+      margin-bottom: 0.5rem;
+      background: linear-gradient(135deg, var(--text-primary) 0%, var(--text-secondary) 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    
+    .hero .name-en {
+      font-family: 'Inter', sans-serif;
+      font-size: clamp(1rem, 2vw, 1.25rem);
+      font-weight: 500;
+      color: var(--text-muted);
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      margin-bottom: 1.5rem;
+    }
+    
+    .hero .role {
+      font-size: 1.25rem;
+      color: var(--accent);
+      font-weight: 500;
+      margin-bottom: 1rem;
+    }
+    
+    .hero .tagline {
+      font-size: 1.125rem;
+      color: var(--text-secondary);
+      max-width: 500px;
+      margin: 0 auto 3rem;
+    }
+    
+    /* Scroll indicator */
+    .scroll-hint {
+      position: absolute;
+      bottom: 2rem;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.5rem;
+      color: var(--text-muted);
+      font-size: 0.75rem;
+      animation: bounce 2s infinite;
+    }
+    
+    @keyframes bounce {
+      0%, 100% { transform: translateX(-50%) translateY(0); }
+      50% { transform: translateX(-50%) translateY(8px); }
+    }
+    
+    .scroll-hint svg {
+      width: 20px;
+      height: 20px;
+    }
+    
+    /* Videos Section */
+    .videos-section {
+      padding: 6rem 2rem;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+    
+    .section-label {
+      font-size: 0.75rem;
+      font-weight: 600;
+      color: var(--accent);
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      margin-bottom: 0.75rem;
+    }
+    
+    .section-title {
+      font-family: 'Zen Kaku Gothic New', sans-serif;
+      font-size: clamp(2rem, 5vw, 3rem);
+      font-weight: 700;
+      margin-bottom: 3rem;
+    }
+    
+    .video-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
+      gap: 2rem;
+    }
+    
+    @media (max-width: 500px) {
+      .video-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+    
+    /* Video Card */
+    .video-card {
+      background: var(--bg-secondary);
+      border-radius: 20px;
+      overflow: hidden;
+      border: 1px solid var(--border);
+      transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    
+    .video-card:hover {
+      border-color: var(--accent);
+      box-shadow: 0 0 40px rgba(249, 115, 22, 0.15);
+      transform: translateY(-4px);
+    }
+    
+    .video-wrapper {
+      position: relative;
+      aspect-ratio: 16/9;
+      background: var(--bg-card);
+      overflow: hidden;
+    }
+    
+    .video-wrapper video {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+    
+    /* Play button overlay */
+    .video-wrapper::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: rgba(0,0,0,0.2);
+      transition: opacity 0.3s;
+    }
+    
+    .video-card:hover .video-wrapper::after {
+      opacity: 0;
+    }
+    
+    .video-info {
+      padding: 1.5rem;
+    }
+    
+    .video-info h3 {
+      font-family: 'Zen Kaku Gothic New', sans-serif;
+      font-size: 1.25rem;
+      font-weight: 700;
+      margin-bottom: 0.375rem;
+    }
+    
+    .video-info p {
+      font-size: 0.875rem;
+      color: var(--text-muted);
+    }
+    
+    /* Footer */
+    footer {
+      padding: 4rem 2rem;
+      text-align: center;
+      border-top: 1px solid var(--border);
+    }
+    
+    footer p {
+      font-size: 0.875rem;
+      color: var(--text-muted);
+    }
+    
+    footer a {
+      color: var(--accent);
+      text-decoration: none;
+    }
+    
+    footer a:hover {
+      text-decoration: underline;
+    }
+    
+    /* Animations on load */
+    .fade-up {
+      opacity: 0;
+      transform: translateY(30px);
+      animation: fadeUp 0.8s ease forwards;
+    }
+    
+    @keyframes fadeUp {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+    
+    .delay-1 { animation-delay: 0.2s; }
+    .delay-2 { animation-delay: 0.4s; }
+    .delay-3 { animation-delay: 0.6s; }
+    .delay-4 { animation-delay: 0.8s; }
+  </style>
+</head>
+<body>
+  <!-- Navigation -->
+  <nav>
+    <a href="/" class="logo">SS</a>
+    <div class="lang-switch">
+      <a href="/" class="active">JP</a>
+      <a href="/en">EN</a>
+      <a href="/zh">中文</a>
+    </div>
+  </nav>
+
+  <!-- Hero -->
+  <section class="hero">
+    <div class="hero-content">
+      <div class="avatar fade-up">S</div>
+      <h1 class="fade-up delay-1">孫 帥多</h1>
+      <p class="name-en fade-up delay-1">SHUAIDUO SUN</p>
+      <p class="role fade-up delay-2">ゲームプランナー</p>
+      <p class="tagline fade-up delay-2">
+        プレイヤー体験を大切に。 Tencentで派对ゲーム・ソーシャルゲームの企画開発を担当。
+      </p>
+    </div>
+    <div class="scroll-hint">
+      <span>Scroll</span>
+      <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
+      </svg>
+    </div>
+  </section>
+
+  <!-- Videos -->
+  <section class="videos-section">
+    <p class="section-label fade-up">Portfolio</p>
+    <h2 class="section-title fade-up">作品動画</h2>
+    
+    <div class="video-grid">
+      <!-- Video 1: 元梦之星 -->
+      <div class="video-card">
+        <div class="video-wrapper">
+          <video 
+            controls 
+            preload="metadata"
+            poster="/video/yuanmengzhixing-thumb.jpg"
+          >
+            <source src="/video/yuanmengzhixing.mp4" type="video/mp4" />
+          </video>
+        </div>
+        <div class="video-info">
+          <h3>元梦之星</h3>
+          <p>パーティーゲーム / ゲーム企画・デザイン</p>
+        </div>
+      </div>
+      
+      <!-- Video 2: QQ小窝 -->
+      <div class="video-card">
+        <div class="video-wrapper">
+          <video 
+            controls 
+            preload="metadata"
+            poster="/video/qqxiaowo-thumb.jpg"
+          >
+            <source src="/video/qq小窝.mp4" type="video/mp4" />
+          </video>
+        </div>
+        <div class="video-info">
+          <h3>QQ小窝</h3>
+          <p>ソーシャルゲーム / ゲーム企画・UX設計</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>© 2024 孫 帥多 | <a href="mailto:your.email@example.com">Contact</a></p>
+  </footer>
+</body>
+</html>
