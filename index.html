@@ -403,7 +403,7 @@
 
     let currentLang = 'en';
 
-    function updateLanguage(lang) {
+    function updateLanguage(lang) { console.log("Switching to:", lang);
       currentLang = lang;
       document.documentElement.lang = lang === 'zh' ? 'zh-CN' : (lang === 'ja' ? 'ja' : 'en');
       
