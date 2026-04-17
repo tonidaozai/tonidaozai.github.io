@@ -502,11 +502,11 @@
   <!-- Language Switcher (Right side, vertical) -->
   <div class="lang-switcher" id="langSwitcher">
     <svg class="lang-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="2" y1="12" x2="22" y2="12"></line><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path></svg>
-    <button class="lang-btn active" data-lang="ja" onclick="switchLang('ja')">
-      JA
-    </button>
-    <button class="lang-btn" data-lang="en" onclick="switchLang('en')">
+    <button class="lang-btn active" data-lang="en" onclick="switchLang('en')">
       EN
+    </button>
+    <button class="lang-btn" data-lang="ja" onclick="switchLang('ja')">
+      JA
     </button>
     <button class="lang-btn" data-lang="zh" onclick="switchLang('zh')">
       ZH
@@ -648,7 +648,7 @@
       }
     };
 
-    let currentLang = 'ja';
+    let currentLang = 'en';
 
     function switchLang(lang) {
       if (lang === currentLang) return;
