@@ -198,6 +198,12 @@
     .social-links a:hover {
       color: var(--primary);
     }
+    
+    .social-links a:not(:last-child)::after {
+      content: '|';
+      margin-left: 1.5rem;
+      color: var(--border);
+    }
 
     /* ========== WORKS SECTION ========== */
     .works {
