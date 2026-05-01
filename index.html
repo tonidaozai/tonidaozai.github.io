@@ -633,5 +633,27 @@
       });
     });
   </script>
+
+    <!-- Visitor Tracker -->
+    <script>
+    (function() {
+      var urlParams = new URLSearchParams(window.location.search);
+      var secretKey = urlParams.get('view');
+      
+      if (secretKey === 'tonysun2026') {
+        var statsDiv = document.createElement('div');
+        statsDiv.id = 'owner-stats';
+        statsDiv.innerHTML = '<div style="position:fixed;bottom:20px;right:20px;background:#000;color:#fff;padding:15px 20px;border-radius:8px;font-family:system-ui;z-index:9999;"><div style="font-size:12px;margin-bottom:5px;">Visitor Stats</div><div style="font-size:24px;font-weight:bold;" id="visitor-count">Loading...</div></div>';
+        document.body.appendChild(statsDiv);
+        
+        fetch('https://api.countapi.xyz/get/tonidaozai-portfolio')
+          .then(function(r){return r.json()})
+          .then(function(d){document.getElementById('visitor-count').textContent = d.value})
+          .catch(function(){document.getElementById('visitor-count').textContent = '?'});
+      }
+      
+      fetch('https://api.countapi.xyz/hit/tonidaozai-portfolio',{method:'GET',cache:'no-cache'});
+    })();
+    </script>
 </body>
 </html>
