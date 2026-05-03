@@ -294,6 +294,16 @@
       height: 16px;
     }
     
+    /* ========== ANIMATION VIDEO ========== */
+    .animation-video {
+      width: 100%;
+      max-width: 600px;
+      aspect-ratio: 16/9;
+      border-radius: 8px;
+      margin-bottom: 1.5rem;
+      background: var(--border);
+    }
+    
     /* ========== ART SECTION ========== */
     .art-gallery {
       display: grid;
@@ -451,6 +461,15 @@
   <section class="section">
     <p class="section-title reveal" data-i18n="animationTitle">Animation Works</p>
     <div class="animation-content reveal">
+      <iframe 
+        class="animation-video"
+        src="//player.bilibili.com/player.html?bvid=BV1SV41117xD&autoplay=0&high_quality=1"
+        scrolling="no" 
+        border="0" 
+        frameborder="no" 
+        framespacing="0" 
+        allowfullscreen="true">
+      </iframe>
       <img src="/images/bilibili-showcase.png" alt="Bilibili Animation" class="animation-image">
       <a href="https://space.bilibili.com/6414199" target="_blank" class="animation-link">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
