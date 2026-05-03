@@ -261,6 +261,27 @@
       color: var(--text-secondary);
     }
     
+    .work-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-size: 0.875rem;
+      color: var(--primary);
+      text-decoration: none;
+      font-weight: 500;
+      transition: color 0.2s;
+      margin-top: 0.5rem;
+    }
+    
+    .work-link:hover {
+      color: var(--text-primary);
+    }
+    
+    .work-link svg {
+      width: 14px;
+      height: 14px;
+    }
+    
     /* ========== ANIMATION SECTION ========== */
     .animation-content {
       display: flex;
@@ -455,6 +476,14 @@
         </video>
         <h3 class="work-title" data-i18n="work1Title">Fun Party</h3>
         <p class="work-desc" data-i18n="work1Desc">Party Game</p>
+        <a href="https://ymzx.qq.com/" target="_blank" class="work-link">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+            <polyline points="15 3 21 3 21 9"></polyline>
+            <line x1="10" y1="14" x2="21" y2="3"></line>
+          </svg>
+          <span data-i18n="work1Link">官方网站</span>
+        </a>
       </div>
       <div class="work-item reveal hover-lift">
         <video class="work-video" poster="/video/qqxiaowo-cover-new.jpg" controls muted loop playsinline>
@@ -548,6 +577,7 @@
         worksTitle: 'ゲーム作品',
         work1Title: '元梦之星',
         work1Desc: 'パーティーゲーム',
+        work1Link: '公式サイト',
         work2Title: 'QQ小窝',
         work2Desc: 'ソーシャルゲーム',
         animationTitle: 'アニメーション作品',
@@ -564,6 +594,7 @@
         worksTitle: 'Game Works',
         work1Title: 'Fun Party',
         work1Desc: 'Party Game',
+        work1Link: 'Official Website',
         work2Title: 'QQ Home',
         work2Desc: 'Social Game',
         animationTitle: 'Animation Works',
@@ -580,6 +611,7 @@
         worksTitle: '游戏作品',
         work1Title: '元梦之星',
         work1Desc: '派对游戏',
+        work1Link: '官方网站',
         work2Title: 'QQ小窝',
         work2Desc: '社交游戏',
         animationTitle: '动画作品',
