@@ -369,19 +369,32 @@
     }
     
     /* ========== PERFORMANCE SECTION ========== */
-    .performance-gallery {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 2rem;
+    .performance-scroll {
+      width: 100%;
+      overflow-x: auto;
+      -webkit-overflow-scrolling: touch;
+      scroll-snap-type: x mandatory;
+      scrollbar-width: none;
+    }
+    
+    .performance-scroll::-webkit-scrollbar {
+      display: none;
+    }
+    
+    .performance-track {
+      display: flex;
+      gap: 1.5rem;
+      padding-bottom: 1rem;
     }
     
     .performance-item {
-      position: relative;
+      flex: 0 0 300px;
+      scroll-snap-align: start;
     }
     
     .performance-photo {
-      width: 100%;
-      aspect-ratio: 4/3;
+      width: 300px;
+      height: 225px;
       object-fit: cover;
       background: var(--border);
       border-radius: 4px;
@@ -391,6 +404,7 @@
       margin-top: 0.75rem;
       font-size: 0.875rem;
       color: var(--text-secondary);
+      white-space: nowrap;
     }
     
     /* ========== FOOTER ========== */
@@ -560,14 +574,24 @@
   <!-- Performance Section -->
   <section class="section">
     <p class="section-title reveal" data-i18n="performanceTitle">Band Performance</p>
-    <div class="performance-gallery reveal">
-      <div class="performance-item">
-        <img src="/images/performance-1.jpg" alt="Performance 1" class="performance-photo">
-        <p class="performance-caption" data-i18n="performance1Caption">Live Performance</p>
-      </div>
-      <div class="performance-item">
-        <img src="/images/performance-2.jpg" alt="Performance 2" class="performance-photo">
-        <p class="performance-caption" data-i18n="performance2Caption">Band Show</p>
+    <div class="performance-scroll reveal">
+      <div class="performance-track">
+        <div class="performance-item">
+          <img src="/images/performance-1.jpg" alt="Performance 1" class="performance-photo">
+          <p class="performance-caption" data-i18n="performance1Caption">Live Performance</p>
+        </div>
+        <div class="performance-item">
+          <img src="/images/performance-2.jpg" alt="Performance 2" class="performance-photo">
+          <p class="performance-caption" data-i18n="performance2Caption">Band Show</p>
+        </div>
+        <div class="performance-item">
+          <img src="/images/performance-3.jpg" alt="Performance 3" class="performance-photo">
+          <p class="performance-caption" data-i18n="performance3Caption">Concert</p>
+        </div>
+        <div class="performance-item">
+          <img src="/images/performance-4.jpg" alt="Performance 4" class="performance-photo">
+          <p class="performance-caption" data-i18n="performance4Caption">Stage</p>
+        </div>
       </div>
     </div>
   </section>
@@ -602,7 +626,9 @@
         artTitle: 'アート作品集',
         performanceTitle: 'バンドパフォーマンス',
         performance1Caption: 'ライブパフォーマンス',
-        performance2Caption: 'バンドショー'
+        performance2Caption: 'バンドショー',
+        performance3Caption: 'ライブイベント',
+        performance4Caption: 'ステージ'
       },
       en: {
         logo: 'Portfolio',
@@ -622,7 +648,9 @@
         artTitle: 'Art Portfolio',
         performanceTitle: 'Band Performance',
         performance1Caption: 'Live Performance',
-        performance2Caption: 'Band Show'
+        performance2Caption: 'Band Show',
+        performance3Caption: 'Concert',
+        performance4Caption: 'Stage'
       },
       zh: {
         logo: 'Portfolio',
@@ -642,7 +670,9 @@
         artTitle: '美术作品集',
         performanceTitle: '乐队演出',
         performance1Caption: '现场演出',
-        performance2Caption: '乐队表演'
+        performance2Caption: '乐队表演',
+        performance3Caption: '音乐会',
+        performance4Caption: '舞台'
       }
     };
 
