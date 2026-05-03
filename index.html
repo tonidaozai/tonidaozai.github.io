@@ -458,17 +458,17 @@
     .art-section { padding: 4rem 2rem; max-width: 1200px; margin: 0 auto; }
     .art-gallery { 
       display: flex; 
-      gap: 1rem; 
+      gap: 1.5rem; 
       overflow-x: auto; 
       scroll-snap-type: x mandatory;
       -webkit-overflow-scrolling: touch;
-      padding-bottom: 1rem;
+      padding: 1rem 0;
     }
     .art-item { 
-      flex: 0 0 100%; 
-      max-width: 100vw;
+      flex: 0 0 auto;
+      width: min(90vw, 500px);
       scroll-snap-align: center;
-      background: var(--border); 
+      background: #f5f5f5; 
       border-radius: 8px; 
       overflow: hidden; 
     }
@@ -476,166 +476,11 @@
       width: 100%; 
       height: auto; 
       display: block; 
-      object-fit: contain;
-      background: #f5f5f5;
     }
 
   </style>
 </head>
 <body>
-  <!-- Nav -->
-  <nav>
-    <a href="#" class="logo" data-i18n="logo">Portfolio</a>
-    <div class="lang-switcher">
-      <button class="lang-btn active" data-lang="en">EN</button>
-      <button class="lang-btn" data-lang="ja">JP</button>
-      <button class="lang-btn" data-lang="zh">CN</button>
-    </div>
-  </nav>
-
-  <!-- Compact Header -->
-  <header class="header">
-    <div class="header-content">
-      <div class="avatar animate-on-load">
-        <img src="/images/shuaiduosun.jpg" alt="Shuaiduo Sun">
-      </div>
-      <div class="header-info">
-        <h1 class="name-main animate-on-load animate-delay-1" data-i18n="nameMain">Shuaiduo Sun</h1>
-        <p class="role-label animate-on-load animate-delay-2" data-i18n="roleLabel">Systems Designer / Level Designer</p>
-        <div class="header-links animate-on-load animate-delay-3">
-          <a class="link-animate" href="mailto:shuaiduosun@gmail.com">Email</a>
-          <span class="divider">|</span>
-          <a class="link-animate" href="https://www.linkedin.com/in/%E5%B8%85%E5%A4%9A-%E5%AD%99-316a60124">LinkedIn</a>
-        </div>
-      </div>
-    </div>
-  </header>
-
-  <!-- Works Section -->
-  <section class="section">
-    <p class="section-title reveal" data-i18n="worksTitle">Game Works</p>
-    <div class="works-grid">
-      <div class="work-item reveal hover-lift">
-        <video class="work-video" poster="/video/yuanmengzhixing-cover-new.webp" controls muted loop playsinline>
-          <source src="/video/yuanmengzhixing.mp4" type="video/mp4">
-        </video>
-        <h3 class="work-title" data-i18n="work1Title">Fun Party</h3>
-        <p class="work-desc" data-i18n="work1Desc">Party Game</p>
-        <a href="https://ymzx.qq.com/" target="_blank" class="work-link">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-            <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
-            <polyline points="15 3 21 3 21 9"></polyline>
-            <line x1="10" y1="14" x2="21" y2="3"></line>
-          </svg>
-          <span data-i18n="work1Link">Official Website</span>
-        </a>
-      </div>
-      <div class="work-item reveal hover-lift">
-        <video class="work-video" poster="/video/qqxiaowo-cover-new.jpg" controls muted loop playsinline>
-          <source src="/video/qqxiaowo.mp4" type="video/mp4">
-        </video>
-        <h3 class="work-title" data-i18n="work2Title">QQ Home</h3>
-        <p class="work-desc" data-i18n="work2Desc">Social Game</p>
-        <a href="https://qqshow.qq.com/" target="_blank" class="work-link">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-            <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
-            <polyline points="15 3 21 3 21 9"></polyline>
-            <line x1="10" y1="14" x2="21" y2="3"></line>
-          </svg>
-          <span data-i18n="work2Link">Official Website</span>
-        </a>
-      </div>
-    </div>
-  </section>
-
-  <!-- Animation Section -->
-  <section class="section">
-    <p class="section-title reveal" data-i18n="animationTitle">Animation Works</p>
-    <div class="animation-content reveal">
-      <div class="animation-left">
-        <img src="/images/bilibili-showcase.png" alt="Bilibili Animation" class="animation-image">
-        <p class="bilibili-desc" data-i18n="bilibiliDesc">Bilibili Animation Creator (20K followers), original animations with 2.1M+ views</p>
-        <a href="https://space.bilibili.com/6414199" target="_blank" class="animation-link">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-            <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
-            <polyline points="15 3 21 3 21 9"></polyline>
-            <line x1="10" y1="14" x2="21" y2="3"></line>
-          </svg>
-          <span data-i18n="animationLink">View on Bilibili</span>
-        </a>
-      </div>
-      <div class="animation-right">
-        <iframe 
-          class="animation-video"
-          src="//player.bilibili.com/player.html?bvid=BV1SV41117xD&autoplay=0&high_quality=1"
-          scrolling="no" 
-          border="0" 
-          frameborder="no" 
-          framespacing="0" 
-          allowfullscreen="true">
-        </iframe>
-        <p class="animation-desc" data-i18n="animationDesc">Original fan animation based on "JoJo's Bizarre Adventure"</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- Art Section -->
-  <section class="section">
-    <p class="section-title reveal" data-i18n="artTitle">Art Portfolio</p>
-    <div class="art-gallery reveal">
-      <div class="art-item">
-        <img src="/images/art-1.jpg" alt="Artwork 1">
-      </div>
-      <div class="art-item">
-        <img src="/images/art-2.jpg" alt="Artwork 2">
-      </div>
-      <div class="art-item">
-        <img src="/images/art-3.jpg" alt="Artwork 3">
-      </div>
-      <div class="art-item">
-        <img src="/images/art-4.jpg" alt="Artwork 4">
-      </div>
-    </div>
-  </section>
-
-  <!-- Performance Section -->
-  <section class="section">
-    <p class="section-title reveal" data-i18n="performanceTitle">Band Performance</p>
-    <div class="performance-scroll reveal">
-      <div class="performance-track">
-        <div class="performance-item">
-          <img src="/images/performance-1.jpg" alt="Performance 1" class="performance-photo">
-          <p class="performance-caption" data-i18n="performance1Caption">Live Performance</p>
-        </div>
-        <div class="performance-item">
-          <img src="/images/performance-3.jpg" alt="Performance 2" class="performance-photo">
-          <p class="performance-caption" data-i18n="performance2Caption">Band Show</p>
-        </div>
-        <div class="performance-item">
-          <img src="/images/performance-2.jpg" alt="Performance 3" class="performance-photo">
-          <p class="performance-caption" data-i18n="performance3Caption">Concert</p>
-        </div>
-        <div class="performance-item">
-          <img src="/images/performance-4.jpg" alt="Performance 4" class="performance-photo">
-          <p class="performance-caption" data-i18n="performance4Caption">Stage</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Footer -->
-
-  <section class="art-section" id="artSection">
-    <div class="section-header">
-      <p class="section-label" id="artLabel">Portfolio</p>
-      <h2 class="section-title" id="artTitle">Art Works</h2>
-    </div>
-    <div class="art-gallery">
-      <div class="art-item"><img src="images/art-1.jpg" alt="Art 1"></div>
-      <div class="art-item"><img src="images/art-2.jpg" alt="Art 2"></div>
-      <div class="art-item"><img src="images/art-3.jpg" alt="Art 3"></div>
-    </div>
-  </section>
 
   <footer>
     <p class="footer-text">© 2026 Shuaiduo Sun</p>
