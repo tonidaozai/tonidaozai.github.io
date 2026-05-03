@@ -265,23 +265,22 @@
     .animation-content {
       display: flex;
       gap: 2rem;
-      align-items: flex-start;
+      align-items: stretch;
       flex-wrap: wrap;
     }
     
-    .animation-left {
-      flex: 1;
-      min-width: 280px;
-      max-width: 400px;
-    }
-    
+    .animation-left,
     .animation-right {
-      flex: 1.5;
-      min-width: 320px;
+      flex: 1;
+      min-width: 300px;
+      display: flex;
+      flex-direction: column;
     }
     
     .animation-image {
       width: 100%;
+      aspect-ratio: 16/9;
+      object-fit: cover;
       border-radius: 8px;
       margin-bottom: 1rem;
       background: var(--border);
