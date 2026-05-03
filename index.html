@@ -473,7 +473,7 @@
             <polyline points="15 3 21 3 21 9"></polyline>
             <line x1="10" y1="14" x2="21" y2="3"></line>
           </svg>
-          <span data-i18n="work1Link">官方网站</span>
+          <span data-i18n="work1Link">Official Website</span>
         </a>
       </div>
       <div class="work-item reveal hover-lift">
@@ -488,7 +488,7 @@
             <polyline points="15 3 21 3 21 9"></polyline>
             <line x1="10" y1="14" x2="21" y2="3"></line>
           </svg>
-          <span data-i18n="work2Link">官方网站</span>
+          <span data-i18n="work2Link">Official Website</span>
         </a>
       </div>
     </div>
@@ -647,10 +647,12 @@
       btn.addEventListener('click', () => updateLanguage(btn.dataset.lang));
     });
 
-    // Check URL hash for language
+    // Check URL hash for language, otherwise default to English
     const hash = window.location.hash.slice(1);
     if (['ja', 'en', 'zh'].includes(hash)) {
       updateLanguage(hash);
+    } else {
+      updateLanguage('en'); // Default language
     }
 
     // Scroll reveal animation
