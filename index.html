@@ -263,14 +263,34 @@
     
     /* ========== ANIMATION SECTION ========== */
     .animation-content {
-      max-width: 800px;
+      display: flex;
+      gap: 2rem;
+      align-items: flex-start;
+      flex-wrap: wrap;
+    }
+    
+    .animation-left {
+      flex: 1;
+      min-width: 280px;
+      max-width: 400px;
+    }
+    
+    .animation-right {
+      flex: 1.5;
+      min-width: 320px;
     }
     
     .animation-image {
       width: 100%;
-      max-width: 600px;
       border-radius: 8px;
-      margin-bottom: 1.5rem;
+      margin-bottom: 1rem;
+      background: var(--border);
+    }
+    
+    .animation-video {
+      width: 100%;
+      aspect-ratio: 16/9;
+      border-radius: 8px;
       background: var(--border);
     }
     
@@ -292,16 +312,6 @@
     .animation-link svg {
       width: 16px;
       height: 16px;
-    }
-    
-    /* ========== ANIMATION VIDEO ========== */
-    .animation-video {
-      width: 100%;
-      max-width: 600px;
-      aspect-ratio: 16/9;
-      border-radius: 8px;
-      margin-bottom: 1.5rem;
-      background: var(--border);
     }
     
     /* ========== ART SECTION ========== */
@@ -461,24 +471,28 @@
   <section class="section">
     <p class="section-title reveal" data-i18n="animationTitle">Animation Works</p>
     <div class="animation-content reveal">
-      <iframe 
-        class="animation-video"
-        src="//player.bilibili.com/player.html?bvid=BV1SV41117xD&autoplay=0&high_quality=1"
-        scrolling="no" 
-        border="0" 
-        frameborder="no" 
-        framespacing="0" 
-        allowfullscreen="true">
-      </iframe>
-      <img src="/images/bilibili-showcase.png" alt="Bilibili Animation" class="animation-image">
-      <a href="https://space.bilibili.com/6414199" target="_blank" class="animation-link">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-          <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
-          <polyline points="15 3 21 3 21 9"></polyline>
-          <line x1="10" y1="14" x2="21" y2="3"></line>
-        </svg>
-        <span data-i18n="animationLink">View on Bilibili</span>
-      </a>
+      <div class="animation-left">
+        <img src="/images/bilibili-showcase.png" alt="Bilibili Animation" class="animation-image">
+        <a href="https://space.bilibili.com/6414199" target="_blank" class="animation-link">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+            <polyline points="15 3 21 3 21 9"></polyline>
+            <line x1="10" y1="14" x2="21" y2="3"></line>
+          </svg>
+          <span data-i18n="animationLink">View on Bilibili</span>
+        </a>
+      </div>
+      <div class="animation-right">
+        <iframe 
+          class="animation-video"
+          src="//player.bilibili.com/player.html?bvid=BV1SV41117xD&autoplay=0&high_quality=1"
+          scrolling="no" 
+          border="0" 
+          frameborder="no" 
+          framespacing="0" 
+          allowfullscreen="true">
+        </iframe>
+      </div>
     </div>
   </section>
 
