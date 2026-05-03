@@ -453,6 +453,13 @@
         text-align: center;
       }
     }
+
+    /* ========== ART SECTION ========== */
+    .art-section { padding: 4rem 2rem; max-width: 1200px; margin: 0 auto; }
+    .art-gallery { display: grid; grid-template-columns: repeat(auto-fill, minmax(350px, 1fr)); gap: 1.5rem; margin-top: 2rem; }
+    .art-item { background: var(--border); border-radius: 8px; overflow: hidden; }
+    .art-item img { width: 100%; height: auto; display: block; }
+
   </style>
 </head>
 <body>
@@ -597,6 +604,19 @@
   </section>
 
   <!-- Footer -->
+
+  <section class="art-section" id="artSection">
+    <div class="section-header">
+      <p class="section-label" id="artLabel">Portfolio</p>
+      <h2 class="section-title" id="artTitle">Art Works</h2>
+    </div>
+    <div class="art-gallery">
+      <div class="art-item"><img src="images/art-1.jpg" alt="Art 1"></div>
+      <div class="art-item"><img src="images/art-2.jpg" alt="Art 2"></div>
+      <div class="art-item"><img src="images/art-3.jpg" alt="Art 3"></div>
+    </div>
+  </section>
+
   <footer>
     <p class="footer-text">© 2026 Shuaiduo Sun</p>
     <div class="footer-links">
