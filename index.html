@@ -18,74 +18,22 @@
       --border: #e5e5e5;
       --primary: #E60012;
       --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
-      --ease-in-out-quint: cubic-bezier(0.86, 0, 0.07, 1);
     }
     
     /* ========== ANIMATIONS ========== */
     @keyframes fadeInUp {
-      from {
-        opacity: 0;
-        transform: translateY(30px);
-      }
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
+      from { opacity: 0; transform: translateY(30px); }
+      to { opacity: 1; transform: translateY(0); }
     }
     
-    @keyframes fadeIn {
-      from { opacity: 0; }
-      to { opacity: 1; }
-    }
-    
-    @keyframes scaleIn {
-      from {
-        opacity: 0;
-        transform: scale(0.9);
-      }
-      to {
-        opacity: 1;
-        transform: scale(1);
-      }
-    }
-    
-    @keyframes slideInRight {
-      from {
-        opacity: 0;
-        transform: translateX(20px);
-      }
-      to {
-        opacity: 1;
-        transform: translateX(0);
-      }
-    }
-    
-    @keyframes typewriter {
-      from { width: 0; }
-      to { width: 100%; }
-    }
-    
-    @keyframes blink {
-      0%, 100% { opacity: 1; }
-      50% { opacity: 0; }
-    }
-    
-    @keyframes float {
-      0%, 100% { transform: translateY(0); }
-      50% { transform: translateY(-5px); }
-    }
-    
-    /* Page load animations */
     .animate-on-load {
       opacity: 0;
       animation: fadeInUp 0.8s var(--ease-out-expo) forwards;
     }
     
-    .animate-on-load:nth-child(1) { animation-delay: 0.1s; }
-    .animate-on-load:nth-child(2) { animation-delay: 0.2s; }
-    .animate-on-load:nth-child(3) { animation-delay: 0.3s; }
-    .animate-on-load:nth-child(4) { animation-delay: 0.4s; }
-    .animate-on-load:nth-child(5) { animation-delay: 0.5s; }
+    .animate-delay-1 { animation-delay: 0.1s; }
+    .animate-delay-2 { animation-delay: 0.2s; }
+    .animate-delay-3 { animation-delay: 0.3s; }
     
     /* Scroll reveal */
     .reveal {
@@ -101,7 +49,7 @@
     
     /* Hover effects */
     .hover-lift {
-      transition: transform 0.3s var(--ease-out-expo), box-shadow 0.3s ease;
+      transition: transform 0.3s var(--ease-out-expo);
     }
     
     .hover-lift:hover {
@@ -129,42 +77,6 @@
       width: 100%;
     }
     
-    /* Avatar hover effect */
-    .avatar-hover {
-      transition: transform 0.5s var(--ease-out-expo), filter 0.3s ease;
-    }
-    
-    .avatar-hover:hover {
-      transform: scale(1.05);
-      filter: brightness(1.05);
-    }
-    
-    /* Language button active state animation */
-    .lang-btn {
-      transition: all 0.3s var(--ease-out-expo);
-    }
-    
-    .lang-btn:hover {
-      transform: translateY(-2px);
-    }
-    
-    /* Work card hover */
-    .work-item {
-      transition: all 0.4s var(--ease-out-expo);
-    }
-    
-    .work-item:hover {
-      transform: translateY(-8px);
-    }
-    
-    .work-item:hover .work-video {
-      transform: scale(1.02);
-    }
-    
-    .work-video {
-      transition: transform 0.5s var(--ease-out-expo);
-    }
-    
     html { scroll-behavior: smooth; font-size: 16px; }
     
     body {
@@ -172,7 +84,6 @@
       background: var(--bg);
       color: var(--text-primary);
       line-height: 1.6;
-      min-height: 100vh;
       font-weight: 400;
     }
     
@@ -229,132 +140,84 @@
     .lang-btn:hover { color: var(--text-secondary); }
     .lang-btn.active { color: var(--text-primary); }
     
-    /* ========== HERO SECTION ========== */
-    .hero {
-      min-height: 100vh;
-      display: flex;
-      align-items: center;
-      padding: 8rem 4rem;
-      position: relative;
+    /* ========== HEADER (COMPACT) ========== */
+    .header {
+      padding: 8rem 4rem 4rem;
+      border-bottom: 1px solid var(--border);
     }
     
-    .hero-content {
+    .header-content {
       max-width: 1200px;
       margin: 0 auto;
-      width: 100%;
-      display: grid;
-      grid-template-columns: auto 1fr;
-      gap: 4rem;
-      align-items: start;
-    }
-    
-    /* ========== AVATAR ========== */
-    .avatar-wrap {
-      position: relative;
+      display: flex;
+      align-items: center;
+      gap: 2rem;
     }
     
     .avatar {
-      width: 120px;
-      height: 120px;
+      width: 80px;
+      height: 80px;
       border-radius: 50%;
       overflow: hidden;
       background: var(--border);
+      flex-shrink: 0;
     }
     
     .avatar img {
       width: 100%;
       height: 100%;
       object-fit: cover;
-      
     }
     
-    /* ========== INTRO TEXT ========== */
-    .intro-section {
-      padding-top: 0.5rem;
+    .header-info {
+      flex: 1;
     }
     
     .name-main {
-      font-size: 3.5rem;
+      font-size: 2rem;
       font-weight: 300;
       letter-spacing: 0.05em;
-      margin-bottom: 0.5rem;
-      line-height: 1.2;
+      margin-bottom: 0.25rem;
     }
     
     .role-label {
-      font-size: 1rem;
-      font-weight: 400;
-      color: var(--text-secondary);
-      letter-spacing: 0.05em;
-      margin-bottom: 2rem;
-    }
-    
-    .intro-name {
       font-size: 0.875rem;
-      font-weight: 500;
-      color: var(--text-primary);
-      margin-bottom: 1rem;
-      letter-spacing: 0.05em;
-    }
-    
-    .intro-desc {
-      font-size: 1.125rem;
-      font-weight: 300;
-      color: var(--text-secondary);
-      line-height: 1.8;
-      margin-bottom: 3rem;
-      max-width: 480px;
-    }
-    
-    /* ========== TAGS ========== */
-    .tags {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.75rem;
-    }
-    
-    .tag {
-      font-size: 0.75rem;
       font-weight: 400;
       color: var(--text-secondary);
       letter-spacing: 0.05em;
-      padding: 0.5rem 0;
+      margin-bottom: 1rem;
     }
     
-    .tag:not(:last-child)::after {
-      content: '/';
-      margin-left: 0.75rem;
-      color: var(--border);
-    }
-    
-
-    
-    .social-links {
+    .header-links {
       display: flex;
       gap: 1rem;
-      margin-top: 1.5rem;
+      align-items: center;
     }
     
-    .social-links a {
+    .header-links a {
       font-size: 0.875rem;
       color: var(--text-secondary);
       text-decoration: none;
       transition: color 0.2s ease;
     }
     
-    .social-links a:hover {
+    .header-links a:hover {
       color: var(--primary);
     }
     
-    .social-links .divider {
+    .header-links .divider {
       color: var(--border);
       user-select: none;
     }
-
-    /* ========== WORKS SECTION ========== */
-    .works {
-      padding: 6rem 4rem;
-      border-top: 1px solid var(--border);
+    
+    /* ========== SECTION STYLES ========== */
+    .section {
+      padding: 5rem 4rem;
+      border-bottom: 1px solid var(--border);
+    }
+    
+    .section:last-of-type {
+      border-bottom: none;
     }
     
     .section-title {
@@ -363,13 +226,14 @@
       letter-spacing: 0.2em;
       text-transform: uppercase;
       color: var(--text-muted);
-      margin-bottom: 4rem;
+      margin-bottom: 3rem;
     }
     
+    /* ========== WORKS SECTION ========== */
     .works-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
-      gap: 4rem;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 3rem;
     }
     
     .work-item {
@@ -382,30 +246,107 @@
       object-fit: cover;
       background: var(--border);
       display: block;
-    }
-    
-    .work-info {
-      padding: 1.5rem 0;
+      margin-bottom: 1rem;
     }
     
     .work-title {
       font-size: 1rem;
       font-weight: 500;
-      margin-bottom: 0.5rem;
-      letter-spacing: 0.02em;
+      margin-bottom: 0.25rem;
     }
     
     .work-desc {
       font-size: 0.875rem;
       font-weight: 300;
       color: var(--text-secondary);
-      line-height: 1.6;
+    }
+    
+    /* ========== ANIMATION SECTION ========== */
+    .animation-content {
+      max-width: 800px;
+    }
+    
+    .animation-image {
+      width: 100%;
+      max-width: 600px;
+      border-radius: 8px;
+      margin-bottom: 1.5rem;
+      background: var(--border);
+    }
+    
+    .animation-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-size: 0.875rem;
+      color: var(--text-primary);
+      text-decoration: none;
+      font-weight: 500;
+      transition: color 0.2s;
+    }
+    
+    .animation-link:hover {
+      color: var(--primary);
+    }
+    
+    .animation-link svg {
+      width: 16px;
+      height: 16px;
+    }
+    
+    /* ========== ART SECTION ========== */
+    .art-gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1.5rem;
+    }
+    
+    .art-item {
+      aspect-ratio: 1;
+      background: var(--border);
+      border-radius: 4px;
+      overflow: hidden;
+    }
+    
+    .art-item img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.5s var(--ease-out-expo);
+    }
+    
+    .art-item:hover img {
+      transform: scale(1.05);
+    }
+    
+    /* ========== PERFORMANCE SECTION ========== */
+    .performance-gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2rem;
+    }
+    
+    .performance-item {
+      position: relative;
+    }
+    
+    .performance-photo {
+      width: 100%;
+      aspect-ratio: 4/3;
+      object-fit: cover;
+      background: var(--border);
+      border-radius: 4px;
+    }
+    
+    .performance-caption {
+      margin-top: 0.75rem;
+      font-size: 0.875rem;
+      color: var(--text-secondary);
     }
     
     /* ========== FOOTER ========== */
     footer {
       padding: 4rem;
-      border-top: 1px solid var(--border);
       display: flex;
       justify-content: space-between;
       align-items: center;
@@ -436,15 +377,13 @@
     @media (max-width: 768px) {
       nav { padding: 1.5rem; }
       .lang-switcher { right: 1.5rem; }
-      .hero { padding: 6rem 1.5rem; }
-      .hero-content {
-        grid-template-columns: 1fr;
-        gap: 2rem;
-      }
-      .avatar { width: 80px; height: 80px; }
-      .name-main { font-size: 2rem; }
-      .works { padding: 4rem 1.5rem; }
-      .works-grid { grid-template-columns: 1fr; gap: 3rem; }
+      .header { padding: 6rem 1.5rem 3rem; }
+      .header-content { flex-direction: column; text-align: center; }
+      .avatar { width: 60px; height: 60px; }
+      .name-main { font-size: 1.5rem; }
+      .header-links { justify-content: center; }
+      .section { padding: 3rem 1.5rem; }
+      .works-grid { grid-template-columns: 1fr; gap: 2rem; }
       footer {
         padding: 2rem 1.5rem;
         flex-direction: column;
@@ -467,23 +406,16 @@
     <a href="#" class="logo" data-i18n="logo">Portfolio</a>
   </nav>
 
-  <!-- Hero -->
-  <section class="hero">
-    <div class="hero-content">
-      <div class="avatar-wrap animate-on-load">
-        <div class="avatar avatar-hover">
-          <img src="/images/shuaiduosun.jpg" alt="Shuaiduo Sun">
-        </div>
+  <!-- Compact Header -->
+  <header class="header">
+    <div class="header-content">
+      <div class="avatar animate-on-load">
+        <img src="/images/shuaiduosun.jpg" alt="Shuaiduo Sun">
       </div>
-      <div class="intro-section">
-        <h1 class="name-main animate-on-load" data-i18n="nameMain">Shuaiduo Sun</h1>
-        <p class="role-label animate-on-load" data-i18n="roleLabel"></p>
-        <div class="tags animate-on-load">
-          <span class="tag" data-i18n="tag1"></span>
-          <span class="tag" data-i18n="tag2"></span>
-          <span class="tag" data-i18n="tag3"></span>
-        </div>
-        <div class="social-links animate-on-load">
+      <div class="header-info">
+        <h1 class="name-main animate-on-load animate-delay-1" data-i18n="nameMain">Shuaiduo Sun</h1>
+        <p class="role-label animate-on-load animate-delay-2" data-i18n="roleLabel">Systems Designer / Level Designer</p>
+        <div class="header-links animate-on-load animate-delay-3">
           <a class="link-animate" href="mailto:shuaiduosun@gmail.com">Email</a>
           <span class="divider">|</span>
           <a class="link-animate" href="https://www.linkedin.com/in/%E5%B8%85%E5%A4%9A-%E5%AD%99-316a60124">LinkedIn</a>
@@ -492,29 +424,75 @@
         </div>
       </div>
     </div>
-  </section>
+  </header>
 
-  <!-- Works -->
-  <section class="works">
-    <p class="section-title reveal" data-i18n="worksTitle">Selected Works</p>
+  <!-- Works Section -->
+  <section class="section">
+    <p class="section-title reveal" data-i18n="worksTitle">Game Works</p>
     <div class="works-grid">
       <div class="work-item reveal hover-lift">
         <video class="work-video" poster="/video/yuanmengzhixing-cover-new.webp" controls muted loop playsinline>
           <source src="/video/yuanmengzhixing.mp4" type="video/mp4">
         </video>
-        <div class="work-info">
-          <h3 class="work-title" data-i18n="work1Title">Fun Party</h3>
-          <p class="work-desc" data-i18n="work1Desc">Party Game</p>
-        </div>
+        <h3 class="work-title" data-i18n="work1Title">Fun Party</h3>
+        <p class="work-desc" data-i18n="work1Desc">Party Game</p>
       </div>
       <div class="work-item reveal hover-lift">
         <video class="work-video" poster="/video/qqxiaowo-cover-new.jpg" controls muted loop playsinline>
           <source src="/video/qqxiaowo.mp4" type="video/mp4">
         </video>
-        <div class="work-info">
-          <h3 class="work-title" data-i18n="work2Title">QQ Home</h3>
-          <p class="work-desc" data-i18n="work2Desc">Social Game</p>
-        </div>
+        <h3 class="work-title" data-i18n="work2Title">QQ Home</h3>
+        <p class="work-desc" data-i18n="work2Desc">Social Game</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Animation Section -->
+  <section class="section">
+    <p class="section-title reveal" data-i18n="animationTitle">Animation Works</p>
+    <div class="animation-content reveal">
+      <img src="/images/bilibili-showcase.jpg" alt="Bilibili Animation" class="animation-image">
+      <a href="https://space.bilibili.com/6414199" target="_blank" class="animation-link">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+          <polyline points="15 3 21 3 21 9"></polyline>
+          <line x1="10" y1="14" x2="21" y2="3"></line>
+        </svg>
+        <span data-i18n="animationLink">View on Bilibili</span>
+      </a>
+    </div>
+  </section>
+
+  <!-- Art Section -->
+  <section class="section">
+    <p class="section-title reveal" data-i18n="artTitle">Art Portfolio</p>
+    <div class="art-gallery reveal">
+      <div class="art-item">
+        <img src="/images/art-1.jpg" alt="Artwork 1">
+      </div>
+      <div class="art-item">
+        <img src="/images/art-2.jpg" alt="Artwork 2">
+      </div>
+      <div class="art-item">
+        <img src="/images/art-3.jpg" alt="Artwork 3">
+      </div>
+      <div class="art-item">
+        <img src="/images/art-4.jpg" alt="Artwork 4">
+      </div>
+    </div>
+  </section>
+
+  <!-- Performance Section -->
+  <section class="section">
+    <p class="section-title reveal" data-i18n="performanceTitle">Band Performance</p>
+    <div class="performance-gallery reveal">
+      <div class="performance-item">
+        <img src="/images/performance-1.jpg" alt="Performance 1" class="performance-photo">
+        <p class="performance-caption" data-i18n="performance1Caption">Live Performance</p>
+      </div>
+      <div class="performance-item">
+        <img src="/images/performance-2.jpg" alt="Performance 2" class="performance-photo">
+        <p class="performance-caption" data-i18n="performance2Caption">Band Show</p>
       </div>
     </div>
   </section>
@@ -535,45 +513,55 @@
         logo: 'Portfolio',
         nameMain: '孫 帥多',
         roleLabel: 'ゲームプランナー',
-        tag1: '',
-        tag2: '',
-        tag3: '',
-        worksTitle: 'Selected Works',
+        worksTitle: 'ゲーム作品',
         work1Title: '元梦之星',
         work1Desc: 'パーティーゲーム',
         work2Title: 'QQ小窝',
         work2Desc: 'ソーシャルゲーム',
+        animationTitle: 'アニメーション作品',
+        animationLink: 'Bilibiliで見る',
+        artTitle: 'アート作品集',
+        performanceTitle: 'バンドパフォーマンス',
+        performance1Caption: 'ライブパフォーマンス',
+        performance2Caption: 'バンドショー'
       },
       en: {
         logo: 'Portfolio',
         nameMain: 'Shuaiduo Sun',
         roleLabel: 'Systems Designer / Level Designer',
-        tag1: 'Tencent',
-        tag2: 'Game Design',
-        worksTitle: 'Selected Works',
+        worksTitle: 'Game Works',
         work1Title: 'Fun Party',
         work1Desc: 'Party Game',
         work2Title: 'QQ Home',
         work2Desc: 'Social Game',
+        animationTitle: 'Animation Works',
+        animationLink: 'View on Bilibili',
+        artTitle: 'Art Portfolio',
+        performanceTitle: 'Band Performance',
+        performance1Caption: 'Live Performance',
+        performance2Caption: 'Band Show'
       },
       zh: {
         logo: 'Portfolio',
         nameMain: '孙帅多',
         roleLabel: '游戏策划',
-        tag1: '腾讯',
-        tag1: '',
-        tag2: '',
-        tag3: '',
+        worksTitle: '游戏作品',
         work1Title: '元梦之星',
         work1Desc: '派对游戏',
         work2Title: 'QQ小窝',
         work2Desc: '社交游戏',
+        animationTitle: '动画作品',
+        animationLink: '访问哔哩哔哩主页',
+        artTitle: '美术作品集',
+        performanceTitle: '乐队演出',
+        performance1Caption: '现场演出',
+        performance2Caption: '乐队表演'
       }
     };
 
     let currentLang = 'en';
 
-    function updateLanguage(lang) { console.log("Switching to:", lang);
+    function updateLanguage(lang) {
       currentLang = lang;
       document.documentElement.lang = lang === 'zh' ? 'zh-CN' : (lang === 'ja' ? 'ja' : 'en');
       
@@ -614,38 +602,13 @@
     }, observerOptions);
     
     document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
-    
-    // Smooth scroll for internal links
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-      anchor.addEventListener('click', function (e) {
-        e.preventDefault();
-        document.querySelector(this.getAttribute('href')).scrollIntoView({
-          behavior: 'smooth'
-        });
-      });
-    });
   </script>
 
-    <!-- Visitor Tracker -->
-    <script>
-    (function() {
-      var urlParams = new URLSearchParams(window.location.search);
-      var secretKey = urlParams.get('view');
-      
-      if (secretKey === 'tonysun2026') {
-        var statsDiv = document.createElement('div');
-        statsDiv.id = 'owner-stats';
-        statsDiv.innerHTML = '<div style="position:fixed;bottom:20px;right:20px;background:#000;color:#fff;padding:15px 20px;border-radius:8px;font-family:system-ui;z-index:9999;"><div style="font-size:12px;margin-bottom:5px;">Visitor Stats</div><div style="font-size:24px;font-weight:bold;" id="visitor-count">Loading...</div></div>';
-        document.body.appendChild(statsDiv);
-        
-        fetch('https://api.countapi.xyz/get/tonidaozai-portfolio')
-          .then(function(r){return r.json()})
-          .then(function(d){document.getElementById('visitor-count').textContent = d.value})
-          .catch(function(){document.getElementById('visitor-count').textContent = '?'});
-      }
-      
-      fetch('https://api.countapi.xyz/hit/tonidaozai-portfolio',{method:'GET',cache:'no-cache'});
-    })();
-    </script>
+  <!-- Visitor Tracker -->
+  <script>
+  (function() {
+    fetch('https://cf-counter.541366405.workers.dev/track').catch(()=>{});
+  })();
+  </script>
 </body>
 </html>
