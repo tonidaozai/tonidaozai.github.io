@@ -226,14 +226,22 @@
     }
     
     /* ========== WORKS SECTION ========== */
-    .works-grid {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
+    .works-list {
+      display: flex;
+      flex-direction: column;
       gap: 3rem;
     }
     
     .work-item {
-      position: relative;
+      display: flex;
+      gap: 2rem;
+      align-items: flex-start;
+      transition: transform 0.3s var(--ease-out-expo);
+    }
+    
+    .work-video-wrap {
+      flex: 0 0 60%;
+      max-width: 60%;
     }
     
     .work-video {
@@ -242,31 +250,45 @@
       object-fit: cover;
       background: var(--border);
       display: block;
-      margin-bottom: 1rem;
+      border-radius: 8px;
+    }
+    
+    .work-data {
+      flex: 1;
+      min-width: 0;
+      padding-top: 0.5rem;
     }
     
     .work-title {
-      font-size: 1rem;
+      font-size: 1.25rem;
       font-weight: 500;
-      margin-bottom: 0.25rem;
+      margin-bottom: 0.75rem;
+      letter-spacing: 0.02em;
+    }
+    
+    .work-meta {
+      font-size: 0.8125rem;
+      color: var(--text-muted);
+      margin-bottom: 1rem;
+      line-height: 1.6;
     }
     
     .work-desc {
       font-size: 0.875rem;
-      font-weight: 300;
+      font-weight: 400;
       color: var(--text-secondary);
+      line-height: 1.7;
     }
     
     .work-link {
       display: inline-flex;
       align-items: center;
-      gap: 0.5rem;
-      font-size: 0.875rem;
+      gap: 0.375rem;
+      font-size: 0.8125rem;
       color: var(--text-secondary);
       text-decoration: none;
-      font-weight: 400;
+      margin-top: 1.25rem;
       transition: color 0.2s;
-      margin-top: 0.5rem;
     }
     
     .work-link:hover {
@@ -448,7 +470,9 @@
       .name-main { font-size: 1.5rem; }
       .header-links { justify-content: center; }
       .section { padding: 3rem 1.5rem; }
-      .works-grid { grid-template-columns: 1fr; gap: 2rem; }
+      .work-item { flex-direction: column; }
+      .work-video-wrap { flex: none; max-width: 100%; }
+      .work-data { padding-top: 0; }
       footer {
         padding: 2rem 1.5rem;
         flex-direction: column;
@@ -518,36 +542,46 @@
   <!-- Works Section -->
   <section class="section">
     <p class="section-title reveal" data-i18n="worksTitle">Game Works</p>
-    <div class="works-grid">
-      <div class="work-item reveal hover-lift">
-        <video class="work-video" poster="/video/yuanmengzhixing-cover-new.jpg" controls muted loop playsinline>
-          <source src="/video/yuanmengzhixing.mp4" type="video/mp4">
-        </video>
-        <h3 class="work-title" data-i18n="work1Title">元梦之星</h3>
-        <p class="work-desc" data-i18n="work1Desc">Party Game</p>
-        <a href="https://ymzx.qq.com/" target="_blank" class="work-link">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-            <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
-            <polyline points="15 3 21 3 21 9"></polyline>
-            <line x1="10" y1="14" x2="21" y2="3"></line>
-          </svg>
-          <span data-i18n="work1Link">Official Website</span>
-        </a>
+    <div class="works-list">
+      <div class="work-item reveal">
+        <div class="work-video-wrap">
+          <video class="work-video" poster="/video/yuanmengzhixing-cover-new.jpg" controls muted loop playsinline>
+            <source src="/video/yuanmengzhixing.mp4" type="video/mp4">
+          </video>
+        </div>
+        <div class="work-data">
+          <h3 class="work-title" data-i18n="work1Title">元梦之星</h3>
+          <p class="work-meta" data-i18n="work1Meta">Party Game · Tencent · 700+ Team</p>
+          <p class="work-desc" data-i18n="work1Desc">Party Game</p>
+          <a href="https://ymzx.qq.com/" target="_blank" class="work-link">
+            <span data-i18n="work1Link">Official Website</span>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+              <polyline points="15 3 21 3 21 9"></polyline>
+              <line x1="10" y1="14" x2="21" y2="3"></line>
+            </svg>
+          </a>
+        </div>
       </div>
-      <div class="work-item reveal hover-lift">
-        <video class="work-video" poster="/video/qqxiaowo-cover-new.jpg" controls muted loop playsinline>
-          <source src="/video/qqxiaowo.mp4" type="video/mp4">
-        </video>
-        <h3 class="work-title" data-i18n="work2Title">QQ小窝</h3>
-        <p class="work-desc" data-i18n="work2Desc">Social Game</p>
-        <a href="https://qqshow.qq.com/" target="_blank" class="work-link">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-            <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
-            <polyline points="15 3 21 3 21 9"></polyline>
-            <line x1="10" y1="14" x2="21" y2="3"></line>
-          </svg>
-          <span data-i18n="work2Link">Official Website</span>
-        </a>
+      <div class="work-item reveal">
+        <div class="work-video-wrap">
+          <video class="work-video" poster="/video/qqxiaowo-cover-new.jpg" controls muted loop playsinline>
+            <source src="/video/qqxiaowo.mp4" type="video/mp4">
+          </video>
+        </div>
+        <div class="work-data">
+          <h3 class="work-title" data-i18n="work2Title">QQ小窝</h3>
+          <p class="work-meta" data-i18n="work2Meta">Social Game · Tencent · 80+ Team</p>
+          <p class="work-desc" data-i18n="work2Desc">Social Game</p>
+          <a href="https://qqshow.qq.com/" target="_blank" class="work-link">
+            <span data-i18n="work2Link">Official Website</span>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+              <polyline points="15 3 21 3 21 9"></polyline>
+              <line x1="10" y1="14" x2="21" y2="3"></line>
+            </svg>
+          </a>
+        </div>
       </div>
     </div>
   </section>
@@ -622,9 +656,11 @@
         focusArea: 'UGC / ソーシャル / 収益化',
         worksTitle: 'ゲーム作品',
         work1Title: '元夢の星',
+        work1Meta: 'パーティーゲーム · Tencent · 700名以上',
         work1Desc: '『Party Coaster』（パートウィ.Coaster）はTencentが手がけた家族向けパーティーゲーム。ランキング、サバイバル、レースなどコアなゲームプレイと、ホーム decorやファームなどカジュアルファームの要素を融合。多角的な長続きする体験エコシステムを構築し、累計ユーザーは数億人に達する。チーム規模は700名以上。',
         work1Link: '公式サイト',
         work2Title: 'QQ小窝',
+        work2Meta: 'ソーシャルゲーム · Tencent · 80名以上',
         work2Desc: '『QQ小窝』はTencentがUnreal Engine 4で開発したメタバース型カジュアルソーシャルプロダクト。ホーム decor、パーティーインタラクション及び軽いゲームプレイを融合しDecor+ソーシャル+軽娯楽の複合体験を構築。Z世代ユーザーをターゲットにバーチャルソーシャルと個性表現の空間を創造し，品牌マーケティングシーンも務めている。チーム規模は約80名以上。',
         work2Link: '公式サイト',
         animationTitle: 'アニメーション作品',
@@ -644,9 +680,11 @@
         roleLabel: 'Systems Designer / Level Designer',
         worksTitle: 'Game Works',
         work1Title: 'Fun Party',
+        work1Meta: 'Party Game · Tencent · 700+ Team',
         work1Desc: 'Fun Party is Tencent\'s family-friendly party game that integrates ranked matches, survival modes, racing, and other core gameplay with light management and social features like home decoration and farming. It has built a diverse long-term experience ecosystem with hundreds of millions of registered users. Players can freely switch between competitive, casual, and social modes. Team size: 700+ members.',
         work1Link: 'Official Website',
         work2Title: 'QQ Nest',
+        work2Meta: 'Social Game · Tencent · 80+ Team',
         work2Desc: 'QQ Nest is Tencent\'s metaverse casual social product built on Unreal Engine 4, combining home decoration, party interaction, and light gameplay to create a decoration + social + entertainment hybrid experience. Targeted at Gen Z users, it provides a space for virtual socializing and personal expression, with brand marketing capabilities. Team size: 80+ members.',
         work2Link: 'Official Website',
         animationTitle: 'Animation Works',
@@ -667,9 +705,11 @@
         focusArea: 'UGC / 社交 / 商业化方向',
         worksTitle: '游戏作品',
         work1Title: '元夢の星',
+        work1Meta: '派对游戏 · 腾讯 · 700+人团队',
         work1Desc: '《元梦之星》是腾讯推出的合家欢派对游戏，融合排位、生存、竞速等核心玩法，并拓展家园、农场等轻度经营与社交内容，构建多元化长线体验生态。项目上线后累计注册用户达亿级，支持玩家在竞技、休闲与社交等不同场景间自由切换，团队规模超700人。',
         work1Link: '官方网站',
         work2Title: 'QQ小窝',
+        work2Meta: '社交游戏 · 腾讯 · 80+人团队',
         work2Desc: '《QQ小窝》是腾讯基于Unreal Engine 4开发的元宇宙休闲社交产品，融合家园装扮、派对互动及轻度玩法，构建"装扮+社交+轻娱乐"的复合体验。产品面向Z世代用户打造虚拟社交与个性化表达空间，并承载品牌营销场景，已与多家国际品牌达成合作，团队规模约80+人。',
         work2Link: '官方网站',
         animationTitle: '动画作品',
