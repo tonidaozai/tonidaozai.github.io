@@ -279,6 +279,40 @@
       color: var(--text-secondary);
       line-height: 1.7;
     }
+
+    .work-contributions {
+      margin-top: 1rem;
+      padding-top: 0.75rem;
+      border-top: 1px solid var(--border);
+    }
+
+    .work-contrib-title {
+      font-size: 0.75rem;
+      font-weight: 500;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      margin-bottom: 0.5rem;
+    }
+
+    .work-contrib-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.375rem;
+    }
+
+    .work-contrib-tag {
+      font-size: 0.75rem;
+      font-weight: 400;
+      color: var(--text-secondary);
+      background: var(--bg-secondary);
+      border: 1px solid var(--border);
+      border-radius: 4px;
+      padding: 0.25rem 0.625rem;
+      white-space: nowrap;
+    }
+
+
     
     .work-link {
       display: inline-flex;
@@ -553,6 +587,15 @@
           <h3 class="work-title" data-i18n="work1Title">元梦之星</h3>
           <p class="work-meta" data-i18n="work1Meta">Party Game · Tencent · 700+ Team</p>
           <p class="work-desc" data-i18n="work1Desc">Party Game</p>
+          <div class="work-contributions">
+            <p class="work-contrib-title" data-i18n="work1ContribTitle">My Contributions</p>
+            <div class="work-contrib-list">
+              <span class="work-contrib-tag" data-i18n="work1Contrib1">家具玩法</span>
+              <span class="work-contrib-tag" data-i18n="work1Contrib2">商业化</span>
+              <span class="work-contrib-tag" data-i18n="work1Contrib3">NPC</span>
+              <span class="work-contrib-tag" data-i18n="work1Contrib4">模拟经营</span>
+            </div>
+          </div>
           <a href="https://ymzx.qq.com/" target="_blank" class="work-link">
             <span data-i18n="work1Link">Official Website</span>
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
@@ -658,6 +701,11 @@
         work1Title: '元夢の星',
         work1Meta: 'パーティーゲーム · Tencent · 700名以上',
         work1Desc: '『Party Coaster』（パートウィ.Coaster）はTencentが手がけた家族向けパーティーゲーム。ランキング、サバイバル、レースなどコアなゲームプレイと、ホーム decorやファームなどカジュアルファームの要素を融合。多角的な長続きする体験エコシステムを構築し、累計ユーザーは数億人に達する。チーム規模は700名以上。',
+        work1ContribTitle: '担当領域',
+        work1Contrib1: '家具システム',
+        work1Contrib2: 'マネタイズ',
+        work1Contrib3: 'NPC',
+        work1Contrib4: 'シミュレーション経営',
         work1Link: '公式サイト',
         work2Title: 'QQ小窝',
         work2Meta: 'ソーシャルゲーム · Tencent · 80名以上',
@@ -682,6 +730,11 @@
         work1Title: 'Fun Party',
         work1Meta: 'Party Game · Tencent · 700+ Team',
         work1Desc: 'Fun Party is Tencent\'s family-friendly party game that integrates ranked matches, survival modes, racing, and other core gameplay with light management and social features like home decoration and farming. It has built a diverse long-term experience ecosystem with hundreds of millions of registered users. Players can freely switch between competitive, casual, and social modes. Team size: 700+ members.',
+        work1ContribTitle: 'My Contributions',
+        work1Contrib1: 'Furniture System',
+        work1Contrib2: 'Monetization',
+        work1Contrib3: 'NPC',
+        work1Contrib4: 'Simulation Management',
         work1Link: 'Official Website',
         work2Title: 'QQ Nest',
         work2Meta: 'Social Game · Tencent · 80+ Team',
@@ -707,6 +760,11 @@
         work1Title: '元夢の星',
         work1Meta: '派对游戏 · 腾讯 · 700+人团队',
         work1Desc: '《元梦之星》是腾讯推出的合家欢派对游戏，融合排位、生存、竞速等核心玩法，并拓展家园、农场等轻度经营与社交内容，构建多元化长线体验生态。项目上线后累计注册用户达亿级，支持玩家在竞技、休闲与社交等不同场景间自由切换，团队规模超700人。',
+        work1ContribTitle: '个人负责内容',
+        work1Contrib1: '家具玩法',
+        work1Contrib2: '商业化',
+        work1Contrib3: 'NPC',
+        work1Contrib4: '模拟经营',
         work1Link: '官方网站',
         work2Title: 'QQ小窝',
         work2Meta: '社交游戏 · 腾讯 · 80+人团队',
