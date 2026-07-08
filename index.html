@@ -417,6 +417,65 @@
       max-width: 760px;
       max-height: 90vh;
       overflow: hidden;
+    }
+
+    /* Article content typography */
+    .article-lead {
+      font-size: 1.05rem;
+      color: var(--text-primary);
+      line-height: 1.8;
+      margin-bottom: 1.2rem;
+      font-weight: 400;
+    }
+
+    .article-section-title {
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: var(--text-primary);
+      margin: 2rem 0 0.8rem;
+      letter-spacing: 0.02em;
+    }
+
+    .article-subsection-title {
+      font-size: 0.95rem;
+      font-weight: 600;
+      color: var(--text-secondary);
+      margin: 1.5rem 0 0.6rem;
+    }
+
+    .article-inline-img {
+      width: 100%;
+      max-height: 280px;
+      object-fit: cover;
+      border-radius: 8px;
+      margin: 0.8rem 0;
+      display: block;
+    }
+
+    .article-content p {
+      font-size: 0.9rem;
+      color: var(--text-secondary);
+      line-height: 1.85;
+      margin-bottom: 0.9rem;
+    }
+
+    .article-content h3,
+    .article-content h4 {
+      color: var(--text-primary);
+    }
+
+    @media (max-width: 768px) {
+      .article-modal {
+        max-width: 100%;
+        max-height: 85vh;
+        border-radius: 12px 12px 0 0;
+        margin-top: auto;
+      }
+      .article-modal-overlay {
+        align-items: flex-end;
+        padding: 0;
+      }
+    }
       display: flex;
       flex-direction: column;
       box-shadow: 0 24px 64px rgba(0,0,0,0.2);
@@ -813,9 +872,9 @@
       <a href="#" class="article-card reveal" data-index="0" rel="noopener">
         <img class="article-cover" src="/images/article-placeholder.jpg" alt="Cover">
         <div class="article-card-body">
-          <span class="article-tag" data-i18n="article1Tag">Game Design</span>
-          <p class="article-card-title" data-i18n="article1Title">Article Title 1</p>
-          <p class="article-card-desc" data-i18n="article1Desc">Article description goes here.</p>
+          <span class="article-tag" data-i18n="article1Tag">Game Analysis</span>
+          <p class="article-card-title" data-i18n="article1Title">The Paradox of Low-Pressure UGC: Why Pokopia is Fun but Hard to Retain</p>
+          <p class="article-card-desc" data-i18n="article1Desc">Click to read the full article</p>
         </div>
       </a>
       <a href="#" class="article-card reveal" data-index="1" rel="noopener">
@@ -1045,9 +1104,9 @@
         performance3Caption: '会社祝典出演',
         performance4Caption: '会社祝典出演',
         articlesTitle: '記事・企画書',
-        article1Tag: 'ゲームデザイン',
-        article1Title: '記事タイトル1（準備中）',
-        article1Desc: 'クリックして詳細を見る',
+        article1Tag: 'ゲーム分析',
+        article1Title: '低圧力UGCの逆説：《Pokopia》为什么好玩，却难长留存',
+        article1Desc: 'クリックして全文を読む',
         article2Tag: 'レベルデザイン',
         article2Title: '記事タイトル2（準備中）',
         article2Desc: 'クリックして詳細を見る',
@@ -1094,8 +1153,8 @@
         performance3Caption: 'Company Event',
         performance4Caption: 'Company Event Performance',
         articlesTitle: 'Articles & Docs',
-        article1Tag: 'Game Design',
-        article1Title: 'Article 1 (Coming Soon)',
+        article1Tag: 'Game Analysis',
+        article1Title: 'The Paradox of Low-Pressure UGC: Why Pokopia is Fun but Hard to Retain',
         article1Desc: 'Click to read the full article',
         article2Tag: 'Level Design',
         article2Title: 'Article 2 (Coming Soon)',
@@ -1144,8 +1203,8 @@
         performance3Caption: '公司庆典演出',
         performance4Caption: '公司庆典演出',
         articlesTitle: '文章与策划案',
-        article1Tag: '游戏设计',
-        article1Title: '文章标题1（筹备中）',
+        article1Tag: '游戏分析',
+        article1Title: '低压力UGC的悖论：《Pokopia》为什么好玩，却难长留存',
         article1Desc: '点击查看全文',
         article2Tag: '关卡设计',
         article2Title: '文章标题2（筹备中）',
@@ -1312,11 +1371,79 @@
     // Per-article data, keyed by index (0,1,2)
     var articles = [
       {
-        cover: '/images/article-placeholder.jpg',
-        tag: { ja: 'ゲームデザイン', en: 'Game Design', zh: '游戏设计' },
-        title: { ja: '記事タイトル1（準備中）', en: 'Article 1 (Coming Soon)', zh: '文章标题1（筹备中）' },
+        cover: '/images/image1.jpeg',
+        tag: { ja: 'ゲーム分析', en: 'Game Analysis', zh: '游戏分析' },
+        title: { ja: '低圧力UGCの逆説：《Pokopia》为什么好玩，却难长留存', en: 'The Paradox of Low-Pressure UGC: Why Pokopia is Fun but Hard to Retain', zh: '低压力UGC的悖论：《Pokopia》为什么好玩，却难长留存' },
         content: {
-          ja: '<p>準備中のため、近日公開予定。</p>',
+          ja: `
+<p class="article-lead">『星露谷物语』から『どうぶつの森』に至るまで，越来越多的游戏开始尝试一种没有压力的体验。玩家不用每天打卡，也不用肝排行榜。相比赢过别人，它们更在意的是玩家能否以自己的节奏在游戏中慢慢生活下去。</p>
+<p>『Pokopia』某种程度上将这种思路进一步推向了建造与生活模拟领域。它不像『Minecraft』那样一开始就将玩家直接丢进高度自由的创造空间，而是通过明确的建造目标、低复杂度编辑、以及强生态反馈引导玩家逐步进入长期经营状态。</p>
+<p>但问题也恰恰出现在这里：当前期主线逐渐结束，这种依赖引导目标维持的低压力体验，是否还能继续支撑玩家长期留在游戏里？</p>
+
+<h3 class="article-section-title">《Pokopia》如何降低UGC压力？</h3>
+<p>首先同步一下文章对低压力的定义：低创作压力、低失败压力、低社交压力。即，这里的低压力并不意味着游戏不肝，而是指玩家很少会因为失败、落后或操作门槛而产生持续性的心理负担。</p>
+
+<h4 class="article-subsection-title">1. 情境叙事引导：让玩家知道该建什么</h4>
+<img class="article-inline-img" src="/images/image1.jpeg" alt="Pokopia 游戏截图">
+<p>『Pokopia』前期并不是真正意义上的自由创造，而是一种被世界修复包装起来的引导型建造。游戏中的每个城镇，几乎都存在大量已经被建好一半的内容：损坏的道路、缺失的建筑、等待清理的区域……玩家很多时候并不是从零开始思考我要建什么，而更像是在沿着开发者提前留下的痕迹，逐步完成整个区域的修复。</p>
+<img class="article-inline-img" src="/images/image2.jpeg" alt="Pokopia 游戏截图">
+<p>相比完全自由的建造游戏，玩家不需要一开始就面对巨大的空地与高度开放的空间规划，也很少会因为不知道下一步该做什么而停下，因为环境本身天然承担了一部分教程与任务引导的功能。</p>
+<p>这种设计实际上改变了玩家面对创造时的心理状态。在许多高自由度建造游戏中，玩家首先面对的是一片空白空间，因此必须先想好我要创造什么。而『Pokopia』则提前为世界赋予了未完成状态，玩家不需要从零定义空间意义，而更像是在已有世界的基础上，继续推动它恢复生机。这种参与修复而非凭空创造的体验，很大程度上降低了玩家进入建造状态时的心理门槛。</p>
+
+<h4 class="article-subsection-title">低复杂度编辑：让玩家知道怎么建</h4>
+<p>『Pokopia』在建造操作上，也明显在主动降低玩家的学习与管理成本。整体交互逻辑采用了非常直觉化的模块式编辑，放置、拆除、替换都遵循统一且容易理解的规则。</p>
+<img class="article-inline-img" src="/images/image3.jpeg" alt="Pokopia 游戏截图">
+<p>与此同时，游戏中的大部分建筑与家具，都采用了明确的整数地格占用逻辑。玩家很少需要处理复杂的比例、结构或精细对齐问题，空间关系始终保持在一种容易理解和管理的状态里。</p>
+<img class="article-inline-img" src="/images/image4.jpeg" alt="Pokopia 游戏截图">
+<p>而在一周目通关后开放的"小磁怪模式"，则进一步放大了这种"低门槛建造"思路。玩家可以一次性铺设最多9格地块，并快速替换地形材质，大幅降低重复铺路与区域改造带来的操作负担。</p>
+<p>但『Pokopia』真正特别的地方并不只是"好上手"，而是它重新定义了建造游戏中的正反馈来源。传统UGC游戏中的满足感，往往建立在作品完成度之上：玩家需要建造足够复杂、足够美观的内容，才能获得表达感与成就感。而『Pokopia』的建造反馈，则更多来自环境本身的变化。</p>
+<img class="article-inline-img" src="/images/image5.jpeg" alt="Pokopia 游戏截图">
+<p>很多时候，即便只是简单铺设道路、补全栖息地，玩家也能够明显感受到世界状态正在发生变化：宝可梦可以活动的区域变多、宝可梦开始对摆放物做出特定交互、原本荒废的区域重新恢复生机。</p>
+<p>这种设计实际上降低了玩家获得"自我效能感"的门槛。玩家不需要先成为擅长创造的人，也能够明确感受到自己的行为正在改变世界。</p>
+
+<h4 class="article-subsection-title">3、生态反馈：降低独自建造的孤独感</h4>
+<p>相比许多强调个人创造的建造游戏，『Pokopia』中的建造过程并不是一种独自施工的体验。宝可梦会始终陪伴玩家活动：它们会跟随、互动、帮忙工作，也会持续在空间中移动与生活。</p>
+<img class="article-inline-img" src="/images/image6.jpeg" alt="Pokopia 游戏截图">
+<p>这种设计带来的意义，并不只是"世界更热闹"，而是它削弱了建造过程中的孤独感。在很多沙盒游戏中，长时间铺路、清理地形与重复建造，很容易让玩家逐渐产生一种机械劳动感，但『Pokopia』中持续存在的陪伴反馈，则会让玩家更容易保持沉浸状态。</p>
+<img class="article-inline-img" src="/images/image7.jpeg" alt="Pokopia 游戏截图">
+<p>某种程度上，宝可梦生态实际上承担了一部分情绪陪伴的功能。玩家并不会感觉自己是在独自完成一个庞大的建造工程，而更像是在和这些生物一起慢慢让世界恢复运转。</p>
+<img class="article-inline-img" src="/images/image8.jpeg" alt="Pokopia 游戏截图">
+<p>这一点也与『幻兽帕鲁』形成了明显区别。『幻兽帕鲁』中的生物系统更偏向自动化生产工具，玩家会自然围绕效率、资源循环与生产线布局进行建设，生物本身也更容易被功能化与流水线化。而『Pokopia』中的宝可梦虽然同样存在属性分工与效率搭配，但整个系统的重心依然更偏向"生活感"而非"工业化生产感"。</p>
+<img class="article-inline-img" src="/images/image9.jpeg" alt="Pokopia 游戏截图">
+<p>某种程度上，『Pokopia』实际上是在通过宝可梦生态，主动分担玩家面对建造时的表达压力、孤独感与控制压力。玩家不需要独自承担让世界变得生动的责任，而是能够在一种持续被回应、被陪伴的状态中，逐步完成整个世界的建设。</p>
+
+<h3 class="article-section-title">为什么长期失效</h3>
+<h4 class="article-subsection-title">"低压力"≠"慢节奏"：前期肝到爆炸，后期无所事事</h4>
+<p>『Pokopia』虽然整体氛围非常"cozy"，但它并不是真正意义上的慢节奏游戏。游戏前期依然存在很强的目标驱动，会持续推动玩家向前推进。相比『动物森友会』依赖现实时间切割玩家节奏，『Pokopia』反而有意识地减少了强制等待机制。</p>
+<p>这也是『Pokopia』的一个核心矛盾：它降低了失败压力与创造压力，却没有真正降低"推进压力"。玩家虽然不会因为"不会建"而停下，但依然会因为还有区域没解锁、还有功能没完成而持续投入时间。</p>
+<p>更重要的是，『Pokopia』前期的大量正反馈，本质上仍然建立在"外部目标驱动"之上。当主线结束后，游戏的长期体验却开始越来越依赖玩家自身的创造欲与长期经营欲。问题在于，真正愿意长期投入装修与空间表达的，本来就是相对少数的玩家类型。</p>
+
+<h4 class="article-subsection-title">前期擅长"创作引导"，后期缺少"创作反馈"</h4>
+<img class="article-inline-img" src="/images/image10.jpeg" alt="Pokopia 游戏截图">
+<p>『Pokopia』前期建造的本质，更接近一种"问题解决"。玩家不断清理废墟、补全空间、恢复区域秩序，并持续获得推进反馈。世界越混乱，玩家的行动就越有意义。</p>
+<p>但问题在于，这种驱动力会随着"世界被修好"而天然衰减。当主线结束、区域趋于完整后，『Pokopia』开始逐渐失去前期最核心的推动力：世界已经不再需要被修复了。</p>
+<p>这也导致玩家后期很容易进入一种"反馈真空"：继续建造当然可以，但系统已经很少继续回应玩家的创作。某种程度上，『Pokopia』真正擅长的，其实是"世界从混乱走向秩序"的过程本身。但当世界逐渐恢复完整之后，游戏却没有继续建立新的长期反馈体系去承接玩家的创造行为。</p>
+
+<h4 class="article-subsection-title">沙盒自由与引导建造之间的矛盾</h4>
+<p>『Pokopia』想同时做到"沙盒式的自由创造"和"动森式的引导型体验"，但这两套逻辑对玩家节奏的假设是相反的。</p>
+<p>沙盒品类的核心乐趣，建立在"随时可以按自己的想法建造"之上——玩家想到什么就能做什么，创造欲不会被系统卡住。但『Pokopia』的材料获取与家具解锁，采用的是每日解锁制：每天能拿到的建材数量、能解锁的家具种类，都被系统提前设定好节奏。这套机制在前期是合理的——它替代了教程，也避免玩家一次性面对过多选项。但对于那些前期就已经有明确装修构想、创造欲旺盛的玩家来说，这种"每日限量"恰恰成了创作过程中最大的挫败点：脑子里已经想好了要怎么摆，手里的材料却还没解锁到。</p>
+
+<h4 class="article-subsection-title">建筑创作与生活模拟之间的矛盾</h4>
+<p>由于游戏采用了"世界修复"式的引导框架，很多区域从设计之初就被大量非必要的填充物占据。比如凸隆隆山地城镇，地图上约80%的可用空间被火山灰覆盖，玩家如果想要清理出一块干净的区域用来自主建房，往往需要耗费三到四个小时专门用于地形清理，而非用于真正的创作表达。</p>
+<p>这暴露出一个深层的设计冲突：情境叙事引导在前期极大降低了创作门槛，但同一套机制在后期却变成了空间资源的物理占用者。玩家想要的是"生活模拟"式的自由布置；而游戏给出的默认状态却是"建筑创作"式的既定框架。</p>
+
+<h3 class="article-section-title">三、可能的优化方向</h3>
+<p>（说明：引导强度随阶段递减、玩家共享岛屿内容等相关设计，游戏目前实际上已经在做，因此不再作为"新建议"列出，以下只列尚未覆盖或可以更进一步的方向。）</p>
+
+<h4 class="article-subsection-title">1. 用"稀有性反馈"接住胜任感的断层</h4>
+<p>针对满好感度无实质反馈的问题，可参考动森"专属相片"的资源唯一性逻辑：为高好感宝可梦设计限定家具、专属外观、称号或稀有材料，让"经营好一只宝可梦"本身重新变成一个有清晰终点、有稀缺回报的可执行目标。</p>
+
+<h4 class="article-subsection-title">2. 在"生态进化"框架内增加宝可梦主动提需求的任务线</h4>
+<p>游戏目前其实已经在做"生态进化"这个方向——栖息地等级、区域升级等系统都已存在。但这套系统目前主要还是"数值到了自动解锁"，缺少更有生活感、更能持续制造具体创作目标的中间层。可以考虑增加宝可梦主动"提需求"的任务，比如某只宝可梦好感提升后，会明确表达"希望栖息地里有一个XX家具"——把原本抽象的等级进阶，转化为一个个具体、可执行、带有角色个性的小委托。</p>
+
+<h4 class="article-subsection-title">3. 主动为清理型玩法设置效率上限修正</h4>
+<p>针对火山灰这类高耗时清理内容，可考虑在后期开放批量清理/一键处理类工具（类似"小磁怪模式"对铺路的优化思路），把非创作性的体力消耗压缩，把更多游戏时间让渡给真正的表达型建造。</p>
+          `,
           en: '<p>Coming soon. Stay tuned.</p>',
           zh: '<p>内容筹备中，即将上线。</p>'
         }
