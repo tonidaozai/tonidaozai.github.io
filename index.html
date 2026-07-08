@@ -9,7 +9,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&family=Noto+Sans+JP:wght@300;400;500&family=Noto+Sans+SC:wght@300;400;500&display=swap" rel="stylesheet">
   <style>
     * { margin: 0; padding: 0; box-sizing: border-box; }
-    
+
     :root {
       --bg: #ffffff;
       --text-primary: #000000;
@@ -19,49 +19,49 @@
       --primary: #E60012;
       --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
     }
-    
+
     /* ========== ANIMATIONS ========== */
     @keyframes fadeInUp {
       from { opacity: 0; transform: translateY(30px); }
       to { opacity: 1; transform: translateY(0); }
     }
-    
+
     .animate-on-load {
       opacity: 0;
       animation: fadeInUp 0.8s var(--ease-out-expo) forwards;
     }
-    
+
     .animate-delay-1 { animation-delay: 0.1s; }
     .animate-delay-2 { animation-delay: 0.2s; }
     .animate-delay-3 { animation-delay: 0.3s; }
-    
+
     /* Scroll reveal */
     .reveal {
       opacity: 0;
       transform: translateY(40px);
       transition: all 0.8s var(--ease-out-expo);
     }
-    
+
     .reveal.active {
       opacity: 1;
       transform: translateY(0);
     }
-    
+
     /* Hover effects */
     .hover-lift {
       transition: transform 0.3s var(--ease-out-expo);
     }
-    
+
     .hover-lift:hover {
       transform: translateY(-4px);
     }
-    
+
     /* Link underline animation */
     .link-animate {
       position: relative;
       display: inline-block;
     }
-    
+
     .link-animate::after {
       content: '';
       position: absolute;
@@ -72,13 +72,13 @@
       background: var(--primary);
       transition: width 0.3s var(--ease-out-expo);
     }
-    
+
     .link-animate:hover::after {
       width: 100%;
     }
-    
+
     html { scroll-behavior: smooth; font-size: 16px; }
-    
+
     body {
       font-family: 'Inter', 'Noto Sans JP', 'Noto Sans SC', sans-serif;
       background: var(--bg);
@@ -86,7 +86,7 @@
       line-height: 1.6;
       font-weight: 400;
     }
-    
+
     /* ========== NAV ========== */
     nav {
       position: fixed;
@@ -102,7 +102,7 @@
       background: #1a1a1a;
       backdrop-filter: blur(10px);
     }
-    
+
     .logo {
       font-weight: 500;
       font-size: 0.875rem;
@@ -111,14 +111,14 @@
       letter-spacing: 0.1em;
       text-transform: uppercase;
     }
-    
+
     /* ========== LANGUAGE SWITCHER ========== */
     .lang-switcher {
       display: flex;
       gap: 0.5rem;
       align-items: center;
     }
-    
+
     .lang-btn {
       background: none;
       border: none;
@@ -131,16 +131,16 @@
       transition: color 0.2s;
       font-family: inherit;
     }
-    
+
     .lang-btn:hover { color: rgba(255,255,255,0.75); }
     .lang-btn.active { color: #ffffff; font-weight: 500; }
-    
+
     /* ========== HEADER (COMPACT) ========== */
     .header {
       padding: 8rem 4rem 4rem;
       border-bottom: 1px solid var(--border);
     }
-    
+
     .header-content {
       max-width: 1200px;
       margin: 0 auto;
@@ -148,7 +148,7 @@
       align-items: center;
       gap: 2rem;
     }
-    
+
     .avatar {
       width: 100px;
       height: 100px;
@@ -157,24 +157,24 @@
       background: var(--border);
       flex-shrink: 0;
     }
-    
+
     .avatar img {
       width: 100%;
       height: 100%;
       object-fit: cover;
     }
-    
+
     .header-info {
       flex: 1;
     }
-    
+
     .name-main {
       font-size: 2rem;
       font-weight: 300;
       letter-spacing: 0.05em;
       margin-bottom: 0.25rem;
     }
-    
+
     .role-label,
     .focus-label {
       font-size: 0.875rem;
@@ -183,39 +183,39 @@
       letter-spacing: 0.05em;
       margin-bottom: 1rem;
     }
-    
+
     .header-links {
       display: flex;
       gap: 1rem;
       align-items: center;
     }
-    
+
     .header-links a {
       font-size: 0.875rem;
       color: var(--text-secondary);
       text-decoration: none;
       transition: color 0.2s ease;
     }
-    
+
     .header-links a:hover {
       color: var(--primary);
     }
-    
+
     .header-links .divider {
       color: var(--border);
       user-select: none;
     }
-    
+
     /* ========== SECTION STYLES ========== */
     .section {
       padding: 5rem 4rem;
       border-bottom: 1px solid var(--border);
     }
-    
+
     .section:last-of-type {
       border-bottom: none;
     }
-    
+
     .section-title {
       font-size: 1.25rem;
       font-weight: 500;
@@ -224,26 +224,26 @@
       color: var(--text-primary);
       margin-bottom: 3rem;
     }
-    
+
     /* ========== WORKS SECTION ========== */
     .works-list {
       display: flex;
       flex-direction: column;
       gap: 3rem;
     }
-    
+
     .work-item {
       display: flex;
       gap: 2rem;
       align-items: flex-start;
       transition: transform 0.3s var(--ease-out-expo);
     }
-    
+
     .work-video-wrap {
       flex: 0 0 60%;
       max-width: 60%;
     }
-    
+
     .work-video {
       width: 100%;
       aspect-ratio: 16/9;
@@ -252,27 +252,27 @@
       display: block;
       border-radius: 8px;
     }
-    
+
     .work-data {
       flex: 1;
       min-width: 0;
       padding-top: 0.5rem;
     }
-    
+
     .work-title {
       font-size: 1.25rem;
       font-weight: 500;
       margin-bottom: 0.75rem;
       letter-spacing: 0.02em;
     }
-    
+
     .work-meta {
       font-size: 0.8125rem;
       color: var(--text-muted);
       margin-bottom: 1rem;
       line-height: 1.6;
     }
-    
+
     .work-desc {
       font-size: 0.875rem;
       font-weight: 400;
@@ -313,7 +313,7 @@
     }
 
 
-    
+
     .work-link {
       display: inline-flex;
       align-items: center;
@@ -324,16 +324,75 @@
       margin-top: 1.25rem;
       transition: color 0.2s;
     }
-    
+
     .work-link:hover {
       color: var(--primary);
     }
-    
+
     .work-link svg {
       width: 14px;
       height: 14px;
     }
-    
+
+    /* ========== ARTICLES SECTION ========== */
+    .articles-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 1.5rem;
+    }
+
+    .article-card {
+      display: block;
+      text-decoration: none;
+      color: inherit;
+      border-radius: 12px;
+      overflow: hidden;
+      border: 1px solid var(--border);
+      transition: transform 0.3s var(--ease-out-expo), box-shadow 0.3s var(--ease-out-expo);
+      background: var(--bg);
+    }
+
+    .article-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 12px 32px rgba(0,0,0,0.08);
+    }
+
+    .article-cover {
+      width: 100%;
+      aspect-ratio: 16/9;
+      object-fit: cover;
+      display: block;
+      background: #f5f5f5;
+    }
+
+    .article-card-body {
+      padding: 1rem 1.25rem 1.25rem;
+    }
+
+    .article-tag {
+      display: inline-block;
+      font-size: 0.7rem;
+      font-weight: 500;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--primary);
+      margin-bottom: 0.5rem;
+    }
+
+    .article-card-title {
+      font-size: 1rem;
+      font-weight: 500;
+      line-height: 1.4;
+      color: var(--text-primary);
+      margin-bottom: 0.35rem;
+    }
+
+    .article-card-desc {
+      font-size: 0.8rem;
+      color: var(--text-secondary);
+      line-height: 1.5;
+    }
+
     /* ========== ANIMATION SECTION ========== */
     .animation-content {
       display: flex;
@@ -341,7 +400,7 @@
       align-items: stretch;
       flex-wrap: wrap;
     }
-    
+
     .animation-left,
     .animation-right {
       flex: 1;
@@ -349,7 +408,7 @@
       display: flex;
       flex-direction: column;
     }
-    
+
     .animation-image {
       width: 100%;
       aspect-ratio: 16/9;
@@ -358,14 +417,14 @@
       margin-bottom: 1rem;
       background: var(--border);
     }
-    
+
     .animation-video {
       width: 100%;
       aspect-ratio: 16/9;
       border-radius: 8px;
       background: var(--border);
     }
-    
+
     .animation-link {
       display: inline-flex;
       align-items: center;
@@ -376,30 +435,30 @@
       font-weight: 400;
       transition: color 0.2s;
     }
-    
+
     .animation-link:hover {
       color: var(--primary);
     }
-    
+
     .animation-link svg {
       width: 16px;
       height: 16px;
     }
-    
+
     .animation-desc {
       margin-top: 0.75rem;
       font-size: 0.875rem;
       color: var(--text-secondary);
       line-height: 1.6;
     }
-    
+
     .bilibili-desc {
       margin-top: 0.5rem;
       font-size: 0.875rem;
       color: var(--text-secondary);
       line-height: 1.6;
     }
-    
+
     /* ========== ART SECTION ========== */
     .art-gallery {
       display: grid;
@@ -407,7 +466,7 @@
       gap: 1rem;
       align-items: start;
     }
-    
+
     .art-item {
       background: var(--border);
       border-radius: 4px;
@@ -415,18 +474,18 @@
       width: 80px;
       flex-shrink: 0;
     }
-    
+
     .art-item img {
       width: 100%;
       height: auto;
       display: block;
       transition: transform 0.5s var(--ease-out-expo);
     }
-    
+
     .art-item:hover img {
       transform: scale(1.05);
     }
-    
+
     /* ========== PERFORMANCE SECTION ========== */
     .performance-scroll {
       width: 100%;
@@ -435,22 +494,22 @@
       scroll-snap-type: x mandatory;
       scrollbar-width: none;
     }
-    
+
     .performance-scroll::-webkit-scrollbar {
       display: none;
     }
-    
+
     .performance-track {
       display: flex;
       gap: 1.5rem;
       padding-bottom: 1rem;
     }
-    
+
     .performance-item {
       flex: 0 0 300px;
       scroll-snap-align: start;
     }
-    
+
     .performance-photo {
       width: 300px;
       height: 225px;
@@ -458,14 +517,14 @@
       background: var(--border);
       border-radius: 4px;
     }
-    
+
     .performance-caption {
       margin-top: 0.75rem;
       font-size: 0.875rem;
       color: var(--text-secondary);
       white-space: nowrap;
     }
-    
+
     /* ========== FOOTER ========== */
     footer {
       padding: 4rem;
@@ -473,18 +532,18 @@
       justify-content: space-between;
       align-items: center;
     }
-    
+
     .footer-text {
       font-size: 0.75rem;
       color: var(--text-muted);
       letter-spacing: 0.05em;
     }
-    
+
     .footer-links {
       display: flex;
       gap: 2rem;
     }
-    
+
     .footer-links a {
       font-size: 0.75rem;
       color: var(--text-secondary);
@@ -492,9 +551,9 @@
       letter-spacing: 0.05em;
       transition: color 0.2s;
     }
-    
+
     .footer-links a:hover { color: var(--text-primary); }
-    
+
     /* ========== RESPONSIVE ========== */
     @media (max-width: 768px) {
       nav { padding: 1.5rem; gap: 1.5rem; }
@@ -517,26 +576,26 @@
 
     /* ========== ART SECTION ========== */
     .art-section { padding: 4rem 2rem; max-width: 1200px; margin: 0 auto; }
-    .art-gallery { 
-      display: flex; 
-      gap: 1rem; 
-      overflow-x: auto; 
+    .art-gallery {
+      display: flex;
+      gap: 1rem;
+      overflow-x: auto;
       scroll-snap-type: x mandatory;
       -webkit-overflow-scrolling: touch;
       padding-bottom: 1rem;
     }
-    .art-item { 
-      flex: 0 0 100%; 
+    .art-item {
+      flex: 0 0 100%;
       max-width: 100vw;
       scroll-snap-align: center;
-      background: var(--border); 
-      border-radius: 8px; 
-      overflow: hidden; 
+      background: var(--border);
+      border-radius: 8px;
+      overflow: hidden;
     }
-    .art-item img { 
-      width: 100%; 
-      height: auto; 
-      display: block; 
+    .art-item img {
+      width: 100%;
+      height: auto;
+      display: block;
       object-fit: contain;
       background: #f5f5f5;
     }
@@ -651,6 +710,37 @@
     </div>
   </section>
 
+  <!-- Articles Section -->
+  <section class="section">
+    <p class="section-title reveal" data-i18n="articlesTitle">Articles & Docs</p>
+    <div class="articles-grid">
+      <a href="#" class="article-card reveal" target="_blank" rel="noopener">
+        <img class="article-cover" src="/images/article-placeholder.jpg" alt="Cover">
+        <div class="article-card-body">
+          <span class="article-tag" data-i18n="article1Tag">Game Design</span>
+          <p class="article-card-title" data-i18n="article1Title">Article Title 1</p>
+          <p class="article-card-desc" data-i18n="article1Desc">Article description goes here.</p>
+        </div>
+      </a>
+      <a href="#" class="article-card reveal" target="_blank" rel="noopener">
+        <img class="article-cover" src="/images/article-placeholder.jpg" alt="Cover">
+        <div class="article-card-body">
+          <span class="article-tag" data-i18n="article2Tag">Game Design</span>
+          <p class="article-card-title" data-i18n="article2Title">Article Title 2</p>
+          <p class="article-card-desc" data-i18n="article2Desc">Article description goes here.</p>
+        </div>
+      </a>
+      <a href="#" class="article-card reveal" target="_blank" rel="noopener">
+        <img class="article-cover" src="/images/article-placeholder.jpg" alt="Cover">
+        <div class="article-card-body">
+          <span class="article-tag" data-i18n="article3Tag">Game Design</span>
+          <p class="article-card-title" data-i18n="article3Title">Article Title 3</p>
+          <p class="article-card-desc" data-i18n="article3Desc">Article description goes here.</p>
+        </div>
+      </a>
+    </div>
+  </section>
+
   <!-- Animation Section -->
   <section class="section">
     <p class="section-title reveal" data-i18n="animationTitle">Animation Works</p>
@@ -668,13 +758,13 @@
         </a>
       </div>
       <div class="animation-right">
-        <iframe 
+        <iframe
           class="animation-video"
           src="//player.bilibili.com/player.html?bvid=BV1SV41117xD&autoplay=0&high_quality=1"
-          scrolling="no" 
-          border="0" 
-          frameborder="no" 
-          framespacing="0" 
+          scrolling="no"
+          border="0"
+          frameborder="no"
+          framespacing="0"
           allowfullscreen="true">
         </iframe>
         <p class="animation-desc" data-i18n="animationDesc">Original fan animation based on "JoJo's Bizarre Adventure"</p>
@@ -722,7 +812,7 @@
         worksTitle: 'ゲーム作品',
         work1Title: '元夢の星',
         work1Meta: 'パーティーゲーム · Tencent · 700名以上',
-        work1Desc: '『Party Coaster』（パートウィ.Coaster）はTencentが手がけた家族向けパーティーゲーム。ランキング、サバイバル、レースなどコアなゲームプレイと、ホーム decorやファームなどカジュアルファームの要素を融合。多角的な長続きする体験エコシステムを構築し、累計ユーザーは数億人に達する。チーム規模は700名以上。',
+        work1Desc: '『Party Coaster』(パートウィ.Coaster)はTencentが手がけた家族向けパーティーゲーム。ランキング、サバイバル、レースなどコアなゲームプレイと、ホーム decorやファームなどカジュアルファームの要素を融合。多角的な長続きする体験エコシステムを構築し、累計ユーザーは数億人に達する。チーム規模は700名以上。',
         work1StatsTitle: 'プロジェクト実績',
         work1Stat1: '登録ユーザー1億人超',
         work1Stat2: 'App Store無料ランキングTOP3常連',
@@ -734,7 +824,7 @@
         work1Link: '公式サイト',
         work2Title: 'QQ小窝',
         work2Meta: 'ソーシャルゲーム · Tencent · 80名以上',
-        work2Desc: '『QQ小窝』はTencentがUnreal Engine 4で開発したメタバース型カジュアルソーシャルプロダクト。ホーム decor、パーティーインタラクション及び軽いゲームプレイを融合しDecor+ソーシャル+軽娯楽の複合体験を構築。Z世代ユーザーをターゲットにバーチャルソーシャルと個性表現の空間を創造し，品牌マーケティングシーンも務めている。チーム規模は約80名以上。',
+        work2Desc: '『QQ小窝』はTencentがUnreal Engine 4で開発したメタバース型カジュアルソーシャルプロダクト。ホーム decor、パーティーインタラクション及び軽いゲームプレイを融合しDecor+ソーシャル+軽娯楽の複合体験を構築。Z世代ユーザーをターゲットにバーチャルソーシャルと個性表現の空間を創造し,品牌マーケティングシーンも務めている。チーム規模は約80名以上。',
         work2StatsTitle: 'プロジェクトデータ',
         work2Stat1: 'モバイルMAUは常に5億レベル',
         work2Stat2: '20以上のブランド協力',
@@ -746,13 +836,23 @@
         animationTitle: 'アニメーション作品',
         animationLink: 'Bilibiliで見る',
         animationDesc: '『ジョジョの奇妙な冒険』を基にしたオリジナルファンアニメ',
-        bilibiliDesc: 'Bilibiliアニメ区クリエイター（2万人フォロワー）、オリジナルアニメ作品累計再生数210万回以上',
+        bilibiliDesc: 'Bilibiliアニメ区クリエイター(2万人フォロワー)、オリジナルアニメ作品累計再生数210万回以上',
         artTitle: 'アート作品集',
         performanceTitle: 'バンドパフォーマンス',
         performance1Caption: 'Livehouse演出',
         performance2Caption: 'Livehouse演出',
         performance3Caption: '会社祝典出演',
-        performance4Caption: '会社祝典出演'
+        performance4Caption: '会社祝典出演',
+        articlesTitle: '記事・企画書',
+        article1Tag: 'ゲームデザイン',
+        article1Title: '記事タイトル1（準備中）',
+        article1Desc: 'クリックして詳細を見る',
+        article2Tag: 'レベルデザイン',
+        article2Title: '記事タイトル2（準備中）',
+        article2Desc: 'クリックして詳細を見る',
+        article3Tag: '企画書',
+        article3Title: '記事タイトル3（準備中）',
+        article3Desc: 'クリックして詳細を見る'
       },
       en: {
         logo: 'Portfolio',
@@ -791,7 +891,17 @@
         performance1Caption: 'Livehouse Show',
         performance2Caption: 'Livehouse Show',
         performance3Caption: 'Company Event',
-        performance4Caption: 'Company Event Performance'
+        performance4Caption: 'Company Event Performance',
+        articlesTitle: 'Articles & Docs',
+        article1Tag: 'Game Design',
+        article1Title: 'Article 1 (Coming Soon)',
+        article1Desc: 'Click to read the full article',
+        article2Tag: 'Level Design',
+        article2Title: 'Article 2 (Coming Soon)',
+        article2Desc: 'Click to read the full article',
+        article3Tag: 'Design Doc',
+        article3Title: 'Article 3 (Coming Soon)',
+        article3Desc: 'Click to read the full article'
       },
       zh: {
         logo: 'Portfolio',
@@ -801,7 +911,7 @@
         worksTitle: '游戏作品',
         work1Title: '元夢の星',
         work1Meta: '派对游戏 · 腾讯 · 700+人团队',
-        work1Desc: '《元梦之星》是腾讯推出的合家欢派对游戏，融合排位、生存、竞速等核心玩法，并拓展家园、农场等轻度经营与社交内容，构建多元化长线体验生态。项目上线后累计注册用户达亿级，支持玩家在竞技、休闲与社交等不同场景间自由切换，团队规模超700人。',
+        work1Desc: '《元梦之星》是腾讯推出的合家欢派对游戏,融合排位、生存、竞速等核心玩法,并拓展家园、农场等轻度经营与社交内容,构建多元化长线体验生态。项目上线后累计注册用户达亿级,支持玩家在竞技、休闲与社交等不同场景间自由切换,团队规模超700人。',
         work1StatsTitle: '项目数据',
         work1Stat1: '注册用户过亿',
         work1Stat2: '长期位于 App Store 免费榜 TOP3',
@@ -813,7 +923,7 @@
         work1Link: '官方网站',
         work2Title: 'QQ小窝',
         work2Meta: '社交游戏 · 腾讯 · 80+人团队',
-        work2Desc: '《QQ小窝》是腾讯基于Unreal Engine 4开发的元宇宙休闲社交产品，融合家园装扮、派对互动及轻度玩法，构建"装扮+社交+轻娱乐"的复合体验。产品面向Z世代用户打造虚拟社交与个性化表达空间，并承载品牌营销场景，已与多家国际品牌达成合作，团队规模约80+人。',
+        work2Desc: '《QQ小窝》是腾讯基于Unreal Engine 4开发的元宇宙休闲社交产品,融合家园装扮、派对互动及轻度玩法,构建"装扮+社交+轻娱乐"的复合体验。产品面向Z世代用户打造虚拟社交与个性化表达空间,并承载品牌营销场景,已与多家国际品牌达成合作,团队规模约80+人。',
         work2StatsTitle: '项目数据',
         work2Stat1: '移动端 MAU 长期在 5 亿级别',
         work2Stat2: '20+品牌合作',
@@ -825,13 +935,23 @@
         animationTitle: '动画作品',
         animationLink: '访问哗哩哗哩主页',
         animationDesc: '基于《JOJO的奇妙冒险》创作的原创同人动画',
-        bilibiliDesc: 'Bilibili动画区创作者（2万粉丝），原创动画作品累计播放量210万+',
+        bilibiliDesc: 'Bilibili动画区创作者(2万粉丝),原创动画作品累计播放量210万+',
         artTitle: '美术作品集',
         performanceTitle: '乐队演出',
         performance1Caption: 'Livehouse演出',
         performance2Caption: 'Livehouse演出',
         performance3Caption: '公司庆典演出',
-        performance4Caption: '公司庆典演出'
+        performance4Caption: '公司庆典演出',
+        articlesTitle: '文章与策划案',
+        article1Tag: '游戏设计',
+        article1Title: '文章标题1（筹备中）',
+        article1Desc: '点击查看全文',
+        article2Tag: '关卡设计',
+        article2Title: '文章标题2（筹备中）',
+        article2Desc: '点击查看全文',
+        article3Tag: '策划案',
+        article3Title: '文章标题3（筹备中）',
+        article3Desc: '点击查看全文'
       }
     };
 
@@ -840,7 +960,7 @@
     function updateLanguage(lang) {
       currentLang = lang;
       document.documentElement.lang = lang === 'zh' ? 'zh-CN' : (lang === 'ja' ? 'ja' : 'en');
-      
+
       document.querySelectorAll('.lang-btn').forEach(btn => {
         btn.classList.toggle('active', btn.dataset.lang === lang);
       });
@@ -870,7 +990,7 @@
       threshold: 0.1,
       rootMargin: '0px 0px -50px 0px'
     };
-    
+
     const observer = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
         if (entry.isIntersecting) {
@@ -878,7 +998,7 @@
         }
       });
     }, observerOptions);
-    
+
     document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
   </script>
 
@@ -893,7 +1013,7 @@
   <script>
   (function() {
     const TRACKER_URL = 'https://cf-counter.541366405.workers.dev/track-video';
-    
+
     // Track individual video
     function trackVideo(videoId, watchDuration, completed) {
       const payload = {
@@ -901,21 +1021,21 @@
         watchDuration: Math.round(watchDuration),
         completed: completed
       };
-      
+
       fetch(TRACKER_URL, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(payload)
       }).catch(()=>{});
     }
-    
+
     // Initialize tracking for each video
     function initVideoTracking(videoEl, videoId) {
       let startTime = null;
       let accumulatedTime = 0;
       let lastPauseTime = null;
       let hasEnded = false;
-      
+
       videoEl.addEventListener('play', function() {
         if (hasEnded) {
           // Restarting after end, reset
@@ -927,19 +1047,19 @@
         }
         startTime = Date.now();
       });
-      
+
       videoEl.addEventListener('pause', function() {
         if (startTime !== null) {
           const elapsed = (Date.now() - startTime) / 1000;
           accumulatedTime += elapsed;
           startTime = null;
           lastPauseTime = Date.now();
-          
+
           // Send tracking on pause
           trackVideo(videoId, accumulatedTime, false);
         }
       });
-      
+
       videoEl.addEventListener('ended', function() {
         if (startTime !== null) {
           const elapsed = (Date.now() - startTime) / 1000;
@@ -947,12 +1067,12 @@
           startTime = null;
         }
         hasEnded = true;
-        
+
         // Send tracking on end (completed = true)
         trackVideo(videoId, accumulatedTime, true);
         accumulatedTime = 0;
       });
-      
+
       // Also track time updates periodically (every 5 seconds of playback)
       videoEl.addEventListener('timeupdate', function() {
         // Only track if playing
@@ -962,16 +1082,16 @@
         }
       });
     }
-    
+
     // Wait for DOM to be ready
     document.addEventListener('DOMContentLoaded', function() {
       const videoYuanmeng = document.getElementById('video-yuanmeng');
       const videoQqxiaowo = document.getElementById('video-qqxiaowo');
-      
+
       if (videoYuanmeng) {
         initVideoTracking(videoYuanmeng, 'yuanmengzhixing');
       }
-      
+
       if (videoQqxiaowo) {
         initVideoTracking(videoQqxiaowo, 'qqxiaowo');
       }
