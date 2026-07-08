@@ -393,6 +393,180 @@
       line-height: 1.5;
     }
 
+    /* ========== ARTICLE MODAL ========== */
+    .article-modal-overlay {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.6);
+      z-index: 1000;
+      align-items: center;
+      justify-content: center;
+      padding: 2rem;
+      backdrop-filter: blur(4px);
+    }
+
+    .article-modal-overlay.open {
+      display: flex;
+    }
+
+    .article-modal {
+      background: var(--bg);
+      border-radius: 16px;
+      width: 100%;
+      max-width: 760px;
+      max-height: 90vh;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      box-shadow: 0 24px 64px rgba(0,0,0,0.2);
+    }
+
+    .article-modal-cover {
+      width: 100%;
+      aspect-ratio: 16/7;
+      object-fit: cover;
+      display: block;
+      background: #f0f0f0;
+      flex-shrink: 0;
+    }
+
+    .article-modal-body {
+      padding: 2rem;
+      overflow-y: auto;
+      flex: 1;
+    }
+
+    .article-modal-header {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 1rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .article-modal-title-group {
+      flex: 1;
+    }
+
+    .article-modal-tag {
+      font-size: 0.7rem;
+      font-weight: 500;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--primary);
+      margin-bottom: 0.4rem;
+    }
+
+    .article-modal-title {
+      font-size: 1.5rem;
+      font-weight: 500;
+      line-height: 1.3;
+      color: var(--text-primary);
+    }
+
+    .article-modal-close {
+      background: none;
+      border: 1px solid var(--border);
+      border-radius: 50%;
+      width: 36px;
+      height: 36px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      flex-shrink: 0;
+      color: var(--text-secondary);
+      transition: background 0.2s;
+    }
+
+    .article-modal-close:hover {
+      background: var(--border);
+    }
+
+    .article-content img {
+      max-width: 100%;
+      border-radius: 8px;
+      margin: 1rem 0;
+      display: block;
+    }
+
+    .article-content p {
+      color: var(--text-secondary);
+      font-size: 0.95rem;
+      line-height: 1.8;
+      margin-bottom: 1rem;
+    }
+
+    .article-content h2 {
+      font-size: 1.1rem;
+      font-weight: 500;
+      color: var(--text-primary);
+      margin: 1.5rem 0 0.75rem;
+    }
+
+    .article-content ul {
+      list-style: none;
+      padding: 0;
+      margin-bottom: 1rem;
+    }
+
+    .article-content ul li {
+      color: var(--text-secondary);
+      font-size: 0.95rem;
+      line-height: 1.8;
+      padding-left: 1.25rem;
+      position: relative;
+      margin-bottom: 0.25rem;
+    }
+
+    .article-content ul li::before {
+      content: '–';
+      position: absolute;
+      left: 0;
+      color: var(--primary);
+    }
+
+    .article-lang-switch {
+      display: flex;
+      gap: 0.25rem;
+      margin-top: 0.5rem;
+    }
+
+    .article-lang-btn {
+      font-size: 0.7rem;
+      font-weight: 500;
+      padding: 0.25rem 0.6rem;
+      border-radius: 20px;
+      border: 1px solid var(--border);
+      background: none;
+      color: var(--text-muted);
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+
+    .article-lang-btn.active {
+      background: var(--text-primary);
+      color: var(--bg);
+      border-color: var(--text-primary);
+    }
+
+    body.modal-open {
+      overflow: hidden;
+    }
+
+    @media (max-width: 640px) {
+      .article-modal {
+        max-height: 100vh;
+        border-radius: 16px 16px 0 0;
+        margin-top: auto;
+      }
+      .article-modal-overlay {
+        padding: 0;
+        align-items: flex-end;
+      }
+    }
+
     /* ========== ANIMATION SECTION ========== */
     .animation-content {
       display: flex;
@@ -714,7 +888,7 @@
   <section class="section">
     <p class="section-title reveal" data-i18n="articlesTitle">Articles & Docs</p>
     <div class="articles-grid">
-      <a href="#" class="article-card reveal" target="_blank" rel="noopener">
+      <a href="#" class="article-card reveal" data-index="0" rel="noopener">
         <img class="article-cover" src="/images/article-placeholder.jpg" alt="Cover">
         <div class="article-card-body">
           <span class="article-tag" data-i18n="article1Tag">Game Design</span>
@@ -722,24 +896,51 @@
           <p class="article-card-desc" data-i18n="article1Desc">Article description goes here.</p>
         </div>
       </a>
-      <a href="#" class="article-card reveal" target="_blank" rel="noopener">
+      <a href="#" class="article-card reveal" data-index="1" rel="noopener">
         <img class="article-cover" src="/images/article-placeholder.jpg" alt="Cover">
         <div class="article-card-body">
-          <span class="article-tag" data-i18n="article2Tag">Game Design</span>
+          <span class="article-tag" data-i18n="article2Tag">Level Design</span>
           <p class="article-card-title" data-i18n="article2Title">Article Title 2</p>
           <p class="article-card-desc" data-i18n="article2Desc">Article description goes here.</p>
         </div>
       </a>
-      <a href="#" class="article-card reveal" target="_blank" rel="noopener">
+      <a href="#" class="article-card reveal" data-index="2" rel="noopener">
         <img class="article-cover" src="/images/article-placeholder.jpg" alt="Cover">
         <div class="article-card-body">
-          <span class="article-tag" data-i18n="article3Tag">Game Design</span>
+          <span class="article-tag" data-i18n="article3Tag">Design Doc</span>
           <p class="article-card-title" data-i18n="article3Title">Article Title 3</p>
           <p class="article-card-desc" data-i18n="article3Desc">Article description goes here.</p>
         </div>
       </a>
     </div>
   </section>
+
+  <!-- Article Modal -->
+  <div class="article-modal-overlay" id="articleModalOverlay">
+    <div class="article-modal" id="articleModal">
+      <img class="article-modal-cover" id="modalCover" src="" alt="">
+      <div class="article-modal-body">
+        <div class="article-modal-header">
+          <div class="article-modal-title-group">
+            <p class="article-modal-tag" id="modalTag"></p>
+            <h2 class="article-modal-title" id="modalTitle"></h2>
+            <div class="article-lang-switch">
+              <button class="article-lang-btn active" data-lang="en">EN</button>
+              <button class="article-lang-btn" data-lang="ja">JP</button>
+              <button class="article-lang-btn" data-lang="zh">CN</button>
+            </div>
+          </div>
+          <button class="article-modal-close" id="articleModalClose">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <line x1="18" y1="6" x2="6" y2="18"></line>
+              <line x1="6" y1="6" x2="18" y2="18"></line>
+            </svg>
+          </button>
+        </div>
+        <div class="article-content" id="modalContent"></div>
+      </div>
+    </div>
+  </div>
 
   <!-- Animation Section -->
   <section class="section">
@@ -1095,6 +1296,103 @@
       if (videoQqxiaowo) {
         initVideoTracking(videoQqxiaowo, 'qqxiaowo');
       }
+    });
+  })();
+
+  /* ========== ARTICLE MODAL ========== */
+  (function() {
+    var overlay = document.getElementById('articleModalOverlay');
+    var modal = document.getElementById('articleModal');
+    var closeBtn = document.getElementById('articleModalClose');
+    var cover = document.getElementById('modalCover');
+    var tag = document.getElementById('modalTag');
+    var title = document.getElementById('modalTitle');
+    var content = document.getElementById('modalContent');
+
+    // Per-article data, keyed by index (0,1,2)
+    var articles = [
+      {
+        cover: '/images/article-placeholder.jpg',
+        tag: { ja: 'ゲームデザイン', en: 'Game Design', zh: '游戏设计' },
+        title: { ja: '記事タイトル1（準備中）', en: 'Article 1 (Coming Soon)', zh: '文章标题1（筹备中）' },
+        content: {
+          ja: '<p>準備中のため、近日公開予定。</p>',
+          en: '<p>Coming soon. Stay tuned.</p>',
+          zh: '<p>内容筹备中，即将上线。</p>'
+        }
+      },
+      {
+        cover: '/images/article-placeholder.jpg',
+        tag: { ja: 'レベルデザイン', en: 'Level Design', zh: '关卡设计' },
+        title: { ja: '記事タイトル2（準備中）', en: 'Article 2 (Coming Soon)', zh: '文章标题2（筹备中）' },
+        content: {
+          ja: '<p>準備中のため、近日公開予定。</p>',
+          en: '<p>Coming soon. Stay tuned.</p>',
+          zh: '<p>内容筹备中，即将上线。</p>'
+        }
+      },
+      {
+        cover: '/images/article-placeholder.jpg',
+        tag: { ja: '企画書', en: 'Design Doc', zh: '策划案' },
+        title: { ja: '記事タイトル3（準備中）', en: 'Article 3 (Coming Soon)', zh: '文章标题3（筹备中）' },
+        content: {
+          ja: '<p>準備中のため、近日公開予定。</p>',
+          en: '<p>Coming soon. Stay tuned.</p>',
+          zh: '<p>内容筹备中，即将上线。</p>'
+        }
+      }
+    ];
+
+    var currentLang = 'en';
+    var currentArticle = null;
+
+    function openModal(index) {
+      currentArticle = articles[index];
+      renderArticle(currentLang);
+      overlay.classList.add('open');
+      document.body.classList.add('modal-open');
+    }
+
+    function closeModal() {
+      overlay.classList.remove('open');
+      document.body.classList.remove('modal-open');
+    }
+
+    function renderArticle(lang) {
+      if (!currentArticle) return;
+      cover.src = currentArticle.cover;
+      tag.textContent = currentArticle.tag[lang];
+      title.textContent = currentArticle.title[lang];
+      content.innerHTML = currentArticle.content[lang];
+
+      // update lang button active states
+      document.querySelectorAll('.article-lang-btn').forEach(function(btn) {
+        btn.classList.toggle('active', btn.dataset.lang === lang);
+      });
+    }
+
+    // wire article cards (data-index on the card)
+    document.querySelectorAll('.article-card').forEach(function(card) {
+      card.addEventListener('click', function(e) {
+        e.preventDefault();
+        var idx = parseInt(card.dataset.index, 10);
+        openModal(idx);
+      });
+    });
+
+    closeBtn.addEventListener('click', closeModal);
+    overlay.addEventListener('click', function(e) {
+      if (e.target === overlay) closeModal();
+    });
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape') closeModal();
+    });
+
+    document.querySelectorAll('.article-lang-btn').forEach(function(btn) {
+      btn.addEventListener('click', function() {
+        currentLang = btn.dataset.lang;
+        renderArticle(currentLang);
+      });
     });
   })();
   </script>
