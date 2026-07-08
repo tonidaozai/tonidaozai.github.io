@@ -1359,6 +1359,7 @@
   })();
 
   /* ========== ARTICLE MODAL ========== */
+  try {
   (function() {
     var overlay = document.getElementById('articleModalOverlay');
     var modal = document.getElementById('articleModal');
@@ -1574,6 +1575,9 @@
       });
     });
   })();
+  } catch(e) {
+    console.error('[ArticleModal] init error:', e);
+  }
   </script>
 </body>
 </html>
