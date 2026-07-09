@@ -877,7 +877,7 @@
         </div>
       </a>
       <a href="#" class="article-card reveal" data-index="1" rel="noopener">
-        <img class="article-cover" src="/images/article-placeholder.jpg" alt="Cover">
+        <img class="article-cover" src="/images/article2-img1.png" alt="Cover">
         <div class="article-card-body">
           <span class="article-tag" data-i18n="article2Tag">Level Design</span>
           <p class="article-card-title" data-i18n="article2Title">Article Title 2</p>
@@ -1107,8 +1107,8 @@
         article1Title: '低圧力UGCの逆説：《Pokopia》为什么好玩，却难长留存',
         article1Desc: 'クリックして全文を読む',
         article2Tag: 'レベルデザイン',
-        article2Title: '記事タイトル2（準備中）',
-        article2Desc: 'クリックして詳細を見る',
+        article2Title: '『SEKIRO』忍义手系统拆解与分析',
+        article2Desc: 'クリックして全文を読む',
         article3Tag: '企画書',
         article3Title: '記事タイトル3（準備中）',
         article3Desc: 'クリックして詳細を見る'
@@ -1156,7 +1156,7 @@
         article1Title: 'The Paradox of Low-Pressure UGC: Why Pokopia is Fun but Hard to Retain',
         article1Desc: 'Click to read the full article',
         article2Tag: 'Level Design',
-        article2Title: 'Article 2 (Coming Soon)',
+        article2Title: 'Sekiro Prosthetic Arm System: Design Breakdown',
         article2Desc: 'Click to read the full article',
         article3Tag: 'Design Doc',
         article3Title: 'Article 3 (Coming Soon)',
@@ -1206,7 +1206,7 @@
         article1Title: '低压力UGC的悖论：《Pokopia》为什么好玩，却难长留存',
         article1Desc: '点击查看全文',
         article2Tag: '关卡设计',
-        article2Title: '文章标题2（筹备中）',
+        article2Title: '《只狼》忍义手系统拆解与分析',
         article2Desc: '点击查看全文',
         article3Tag: '策划案',
         article3Title: '文章标题3（筹备中）',
@@ -1529,13 +1529,347 @@
         }
       },
       {
-        cover: '/images/article-placeholder.jpg',
+        cover: '/images/article2-img1.png',
         tag: { ja: 'レベルデザイン', en: 'Level Design', zh: '关卡设计' },
-        title: { ja: '記事タイトル2（準備中）', en: 'Article 2 (Coming Soon)', zh: '文章标题2（筹备中）' },
+        title: { ja: '『SEKIRO』忍义手系统拆解与分析', en: 'Sekiro Prosthetic Arm System: Design Breakdown', zh: '《只狼》忍义手系统拆解与分析' },
         content: {
-          ja: '<p>準備中のため、近日公開予定。</p>',
+          ja: `
+<p class="article-lead"><strong>结论先行：</strong></p>
+<p><strong>1. 忍义手设计目的：</strong>从KRS进行分析——（K）辅助型武器系统，为战斗系统服务；（R）对核心战斗系统的维护；（S）驱动玩家练习技巧、获得成就感。</p>
+<img class="article-inline-img" src="/images/article2-img1.png" alt="只狼忍义手系统概览">
+
+<h4 class="article-subsection-title">█ 目的详解</h4>
+<ul>
+<li><strong>战斗系统：</strong>丰富战斗宽度，提升玩法多样性，为玩家带来乐趣；玩家可主动创造攻击机会，影响战斗节奏，增加控制感；提供攻克难关的多样化选项，丰富不同操作水平玩家的游戏体验。</li>
+<li><strong>探索系统：</strong>使探索与战斗系统相关，增加玩家探索动力，为探索提供反馈。</li>
+<li><strong>怪物系统：</strong>丰富与敌人的互动，给予玩家面对多样化敌人的应对手段，丰富策略空间。</li>
+<li><strong>形成关于"精通"的乐趣循环</strong></li>
+</ul>
+
+<p><strong>2. 纸人设计目的：</strong>从游戏设计层来看，防止忍义手滥用，将重心向战斗的核心机制引导，维护游戏整体难度；优化获取与消耗循环，使系统间形成完整且自洽的闭环。</p>
+<p><strong>3. "爆竹义手"与"大蒲扇义手"设计目的：</strong>从玩家体验层来看，给予玩家对后续敌人具有针对性的道具，对不同怪物与关卡产生不同效果，优化战斗策略的灵活性；为不同时期玩家制造学习目标与多样化战斗乐趣。</p>
+
+<h3 class="article-section-title">一、忍义手设计定位与目的</h3>
+<img class="article-inline-img" src="/images/article2-img2.png" alt="忍义手设计定位">
+
+<h4 class="article-subsection-title">Knowledge层——为核心战斗系统服务的辅助型武器系统</h4>
+<img class="article-inline-img" src="/images/article2-img3.png" alt="Knowledge层分析">
+<p><strong>定位：</strong>为战斗系统而服务，并辅助主武器、代替防具系统而存在。</p>
+<p>每个忍义手都具备不同的作用与特点，玩家通过学习不同忍义手的使用方式，可以满足好奇心，获得学习的成就感与新鲜感。</p>
+<img class="article-inline-img" src="/images/article2-img4.png" alt="忍义手作用与特点">
+
+<h4 class="article-subsection-title">Rule层——对核心战斗机制的维护</h4>
+<img class="article-inline-img" src="/images/article2-img5.png" alt="Rule层分析">
+<p><strong>基本机制：</strong>获得特定道具后解锁忍义手；可在战斗中主动释放忍义手技能，释放后影响输出、节奏、位移、目标锁定等战斗要素；不同忍义手对敌人具有差异化影响；使用忍义手会消耗纸人；存在多样化的忍义手。</p>
+<img class="article-inline-img" src="/images/article2-img6.png" alt="忍义手基本机制">
+<p>忍义手的基本规则主要体现在战斗、消耗、怪物、关卡等多个系统的延伸上。忍义手系统提升了战斗的广度与深度，满足了玩家的多样化战斗需求，丰富了玩家在战斗中的策略空间与乐趣。</p>
+
+<h4 class="article-subsection-title">Skill层——驱动玩家练习技巧，收获成就感</h4>
+<img class="article-inline-img" src="/images/article2-img7.png" alt="Skill层分析">
+<p>一般的魂类游戏存在两类精通维度：策略与判断vs技术和熟练度。『SEKIRO』忍义手的精通维度在于组合的策略性和操作精准度上。</p>
+<img class="article-inline-img" src="/images/article2-img8.png" alt="精通维度分析">
+<p>作为游戏内易上手、难精通的系统代表之一，玩家对忍义手技巧的掌握经历着<strong>思考</strong>（理解忍义手作用、思考如何搭配道具、技能）——<strong>磨练</strong>（在实战中反复试错）——<strong>掌握</strong>（将思维模式和操作本能化）——<strong>自我挑战</strong>四个阶段。忍义手增加了对战策略的广度与对战精通的深度，在提升技巧后会产生流畅且华丽的攻击模式，使战斗兼具操作性与观赏性，从而让玩家专注于自我激励和成长。</p>
+
+<h4 class="article-subsection-title">设计目的详解——结合战斗、怪物、地图等系统</h4>
+
+<p><strong>1、战斗系统层面：</strong></p>
+<img class="article-inline-img" src="/images/article2-img9.png" alt="战斗系统层面分析">
+<p><strong>①多样化的忍义手丰富战斗宽度，提升玩法多样性，为玩家带来乐趣</strong></p>
+<p>各具特色的忍义手具备不同的战斗模式与使用规则，为玩家提供了多样化战斗选择的空间，丰富了战斗的宽度，给予玩家面对游戏情况时更多应对手段，并为玩家带来不同的乐趣与战斗体验。</p>
+<img class="article-inline-img" src="/images/article2-img10.png" alt="战斗宽度分析">
+<p><strong>②玩家可进行主动反应行为，影响或掌控战斗节奏，增加控制感</strong></p>
+<p>在战斗中，玩家可通过主动使用忍义手制造更多输出的机会与空间，让玩家面对情况时有一定自由度选择自己的行为，从而用多样化的方式影响战斗节奏、增加控制感。</p>
+<img class="article-inline-img" src="/images/article2-img11.png" alt="战斗节奏控制感">
+<p><strong>③提供攻克难关的多样化方式，为低水平操作玩家提供容错选择</strong></p>
+<p>忍义手系统为掌握了不同程度技巧的玩家带来了针对高难度战斗的多样化解决方案。对于不能熟练弹刀的玩家来说，忍义手提供了核心玩法（格挡弹刀+积累架势值）之外的进攻手段，并且降低了对操作的要求。</p>
+<img class="article-inline-img" src="/images/article2-img12.png" alt="容错选择分析">
+
+<p><strong>2、地图系统层面：</strong>使探索与战斗系统相关，增加玩家探索动力，为探索提供反馈。</p>
+<p>大部分忍义手的前置道具分布在大地图的各个位置中，需要玩家积极探索才能获取。游戏通过提供"探索地图便获得能够影响战斗的装备"的正向反馈，引导玩家探索地图的细节角落，增加对世界的探索动力。</p>
+<img class="article-inline-img" src="/images/article2-img13.png" alt="地图探索系统分析">
+
+<p><strong>3、怪物系统层：</strong>丰富与怪物的互动，给予玩家面对多样化敌人的应对手段，丰富策略空间。</p>
+<p>每种忍义手都具有独特能力与作用范围，不同忍义手对不同敌人弱点可造成差异化伤害。比如，爆竹对野兽敌人具有奇效；机关伞多用于防御敌人攻击；雾鸦可用于反击敌人。不同忍义手只有在不同场景中妥善运用才能发挥出最大价值。</p>
+<img class="article-inline-img" src="/images/article2-img14.png" alt="怪物系统交互分析">
+<img class="article-inline-img" src="/images/article2-img15.png" alt="怪物弱点差异化分析">
+<p>对敌人攻击节奏以及弱点进行针对性攻击的设计，强调了玩家与敌人的交互性，让纯粹的PVE玩法同样也具备了如面对真人般进行战斗的精准度与爽快感。</p>
+
+<p><strong>4、增加战斗深度，实现"精通"的乐趣循环</strong></p>
+<img class="article-inline-img" src="/images/article2-img16.png" alt="精通乐趣循环">
+<p><strong>包含知识：</strong>操作精度（指令复杂度、空间精度、时间精度）；反应频率（主动、被动）。</p>
+
+<table class="article-analysis-table">
+<thead>
+<tr><th>指令复杂度</th><th>空间精度</th><th>时间精度</th><th>主动反应频率</th><th>被动反应频率</th></tr>
+</thead>
+<tbody>
+<tr>
+<td>与指令数、组合键、连招、长度等强相关；玩家面对游戏内情况需做出反应</td>
+<td>玩家对方向和距离的把控、方向修正、距离吸附、攻击范围、位移等要素</td>
+<td>对特定操作判定帧的精通程度</td>
+<td>拥有简单的指令集；招式相对简单</td>
+<td>敌人动作频繁；需做出频繁的防御反应</td>
+</tr>
+</tbody>
+</table>
+
+<p>精通循环，意为"通过不断的观察和学习，最终战胜挑战的过程"。忍义手系统对应着精通维度的策略完备度和操作精度。通过学习多样化的忍具用法，并将之运用在实战过程中取得胜利，会为玩家带来成长感。每一次忍义手策略的准备到在实战中操作成功所带来的正反馈可让玩家产生极强的成就感，从而产生对精通忍具的乐趣循环。</p>
+<img class="article-inline-img" src="/images/article2-img17.png" alt="精通乐趣循环示例">
+<p>如：爆竹忍义手的精进使用方式可通过使用高阶爆竹（紫烟爆竹）的延迟攻击来针对向前位移的敌人，并且玩家可在使用爆竹后立刻接技能，实现流畅且华丽的输出。</p>
+
+<h3 class="article-section-title">二、纸人消耗与获取设计</h3>
+
+<p><strong>（1）设计定位与作用：与战斗相关的消耗品</strong></p>
+<img class="article-inline-img" src="/images/article2-img18.png" alt="纸人消耗设计定位">
+<p><strong>（K）定位：</strong>用金币获取的消耗品，使用不同忍义手、技能等会消耗不同数量的纸人。</p>
+<p><strong>（R）基本机制：</strong>纸人有容量上限，玩家最多可携带19个纸人。</p>
+
+<p><strong>（2）设计目的：强调核心战斗系统，优化各个系统运作的合理性</strong></p>
+<p><strong>1、战斗系统层面：</strong>将重心向战斗的核心机制引导，防止忍义手滥用，维护游戏整体难度</p>
+<img class="article-inline-img" src="/images/article2-img19.png" alt="战斗系统层面设计目的">
+<p>使用忍义手会消耗纸人、纸人存在携带容量上限的基本机制限制了忍义手在战斗中的使用次数，目的是强调战斗的核心机制，即通过格挡弹刀积累架势值从而对敌人进行忍杀。玩家在游戏中不能无限次数地使用忍义手，意味着观察敌人节奏、找准时机格挡输出是玩家必须学习的战斗内核，无法被任何辅助机制代替。因此，游戏的难度也得到了维持。</p>
+<img class="article-inline-img" src="/images/article2-img20.png" alt="战斗核心机制维护">
+<p><strong>（S）</strong>从<strong>技巧层</strong>来看，由于在战斗中玩家可支配的纸人数量有限，就需要玩家掌握恰当的节点、有效利用忍义手和技能，从而实现高效的战斗体验。</p>
+
+<p><strong>2、经济系统层面：</strong>优化获取与消耗循环，使系统间形成完整且自洽的闭环</p>
+<img class="article-inline-img" src="/images/article2-img21.png" alt="经济系统层面分析">
+<p>纸人作为使用忍义手的消耗品，它的定位不仅平衡了玩家对钱袋的依赖、鼓励玩家投入战斗，同样还优化了金钱获取与消耗的循环，让玩家杀敌获取的金钱奖励变得更有价值的同时，防止玩家为降低死亡惩罚而大量购买钱袋而造成资源过剩，从而使经济系统与战斗系统实现自洽的闭环。</p>
+<img class="article-inline-img" src="/images/article2-img22.png" alt="经济与战斗系统闭环">
+
+<h3 class="article-section-title">三、忍义手"罗伯特的爆竹"与"大蒲扇"的设计分析</h3>
+
+<p><strong>（1）设计定位与作用：</strong></p>
+<p><strong>1、爆竹忍义手：</strong></p>
+<img class="article-inline-img" src="/images/article2-img23.png" alt="爆竹忍义手">
+<p><strong>（K）定位：</strong>需前置道具"罗伯特的爆竹"</p>
+<p><strong>（R）基本机制：</strong>对野兽生物有奇效；控场能力强；可接技能；前期可获得，获得方式安全；具有四种进阶形态</p>
+<img class="article-inline-img" src="/images/article2-img24.png" alt="爆竹忍义手机制">
+
+<p><strong>2、神隐忍义手：</strong></p>
+<img class="article-inline-img" src="/images/article2-img25.png" alt="神隐忍义手">
+<p><strong>（K）定位：</strong>需前置道具"大蒲扇"</p>
+<p><strong>（R）基本机制：</strong>对僧人有奇效；可让敌人转向；中后期获取，难度较大</p>
+
+<table class="article-analysis-table">
+<thead>
+<tr><th>忍义手</th><th>特性</th><th>解析</th></tr>
+</thead>
+<tbody>
+<tr><td>二度神隐</td><td>可连续释放两次旋风</td><td>转向后可直接被刺忍杀；对僧人的克制有利于刷仙峰寺</td></tr>
+<tr><td>捐赠薄</td><td>可在施加攻击时获得金钱/道具</td><td>—</td></tr>
+</tbody>
+</table>
+
+<p><strong>（2）设计目的</strong></p>
+<p>根据KRS分析法，『SEKIRO』忍义手的机制与玩家行为是相互对应的，种类繁多的忍义手目的是为了对玩家产生不同的游戏预期体验。</p>
+
+<p><strong>1、战斗体验层：</strong>给予玩家对后续敌人具有针对性的道具，对不同怪物与关卡产生不同效果，优化战斗策略的灵活性</p>
+<p><strong>①爆竹忍义手</strong></p>
+<p>以火牛关卡为例，玩家主要的攻击思路是通过释放爆竹让火牛抬起前腿，从而借机在火牛腹下进行短暂控场输出，并如此循环往复的过程。相较于专注格挡积攒架势值的打法，利用爆竹惊吓敌人可以增加容错率。</p>
+<img class="article-inline-img" src="/images/article2-img26.png" alt="火牛关卡爆竹应用">
+<img class="article-inline-img" src="/images/article2-img27.png" alt="爆竹控场输出">
+<img class="article-inline-img" src="/images/article2-img28.png" alt="爆竹容错率分析">
+
+<p><strong>②大蒲扇忍义手</strong></p>
+<p>大蒲扇忍义手具有很强的控制力，可以让玩家主动改变敌人的攻击方向，从而制造进攻机会。如在面对破戒僧时，由于破戒僧攻击起手时间较长，玩家可在敌人抬手时使用大蒲扇忍义手改变敌人攻击方向，为自己制造从背后输出的机会并进行精确输出。</p>
+<img class="article-inline-img" src="/images/article2-img29.png" alt="大蒲扇忍义手应用一">
+<img class="article-inline-img" src="/images/article2-img30.png" alt="大蒲扇忍义手应用二">
+<p>大蒲扇忍义手主要适用于仙峰寺关卡内，对于僧人有奇效，可轻松让僧人死亡，减少清理杂兵的时长。</p>
+<img class="article-inline-img" src="/images/article2-img31.png" alt="大蒲扇仙峰寺应用">
+<p>但是受制于起手时间较长，大蒲扇忍义手的释放风险也相对较高，其控制转身能力在较为灵活的BOSS面前，如狮猿、苇名一心等，就显得收效甚微，甚至会暴露出防御破绽从而受伤。</p>
+<img class="article-inline-img" src="/images/article2-img32.png" alt="大蒲扇局限性分析">
+
+<p><strong>2、知识、技巧学习层：</strong>为不同时期玩家制造学习目标与多样化战斗乐趣</p>
+<p><strong>①爆竹忍义手</strong></p>
+<p>爆竹忍义手出现在游戏的前期，在拿到该忍义手后，玩家很快便可以遇到它针对的敌人（如：鬼邢部、火牛），可以看出主要目的是引导玩家学习"忍义手可控制攻击节奏"的知识，从而在后续的关卡中进行忍义手在影响战斗节奏方面的操作技能的练习与提升。</p>
+<img class="article-inline-img" src="/images/article2-img33.png" alt="爆竹忍义手学习目标">
+<p>如：玩家对火牛使用爆竹，可让火牛产生大约4秒的受击硬直时间，玩家因此学习爆竹对野兽敌人的战斗影响。</p>
+<img class="article-inline-img" src="/images/article2-img34.png" alt="爆竹对野兽敌人影响">
+<p>如：对长爪蜈蚣使用爆竹，可中断敌人起手攻击，并接技能，进行循环式输出。</p>
+
+<p><strong>②大蒲扇忍义手</strong></p>
+<p><strong>大蒲扇忍义手</strong>作为出现在中后期的忍具，它的目的主要是出于<strong>技巧层面</strong>，即：为了丰富玩家控制攻击节奏的多样性，衔接不同技能，为玩家提供更多差异化且具有趣味性的辅助攻击手段。</p>
+<img class="article-inline-img" src="/images/article2-img35.png" alt="大蒲扇技巧学习一">
+<img class="article-inline-img" src="/images/article2-img36.png" alt="大蒲扇技巧学习二">
+<img class="article-inline-img" src="/images/article2-img37.png" alt="大蒲扇技巧学习三">
+<img class="article-inline-img" src="/images/article2-img38.png" alt="大蒲扇技巧学习四">
+<p>例如：玩家可在熟练记忆敌人的进攻动作与时机，为大蒲扇的释放起手预留时间，从而释放忍义手，并迅速衔接技能。这种操作可以达到行云流水，兼具操作挑战性与视觉美观。</p>
+<p>大蒲扇的上手难度较高、消耗成本较大、对应的敌人弱点较为固定，导致该忍义手的试错成本较大，所以玩家往往不会倾向于在BOSS战中使用大蒲扇忍义手。</p>
+
+<p style="color: var(--text-muted); font-size: 0.85rem; margin-top: 2rem;"><strong>参考资料：</strong><br>
+1. 『SEKIRO』全忍义手详解及收集攻略<br>
+2. 暗影无形，一击致命——浅谈只狼以及与魂系列的区别<br>
+3. 高手在民间，失手在阴间 - 忍义手"大蒲扇"性能解析</p>
+`,
           en: '<p>Coming soon. Stay tuned.</p>',
-          zh: '<p>内容筹备中，即将上线。</p>'
+          zh: `
+<p class="article-lead"><strong>结论先行：</strong></p>
+<p><strong>1. 忍义手设计目的：</strong>从KRS进行分析——（K）辅助型武器系统，为战斗系统服务；（R）对核心战斗系统的维护；（S）驱动玩家练习技巧、获得成就感。</p>
+<img class="article-inline-img" src="/images/article2-img1.png" alt="只狼忍义手系统概览">
+
+<h4 class="article-subsection-title">█ 目的详解</h4>
+<ul>
+<li><strong>战斗系统：</strong>丰富战斗宽度，提升玩法多样性，为玩家带来乐趣；玩家可主动创造攻击机会，影响战斗节奏，增加控制感；提供攻克难关的多样化选项，丰富不同操作水平玩家的游戏体验。</li>
+<li><strong>探索系统：</strong>使探索与战斗系统相关，增加玩家探索动力，为探索提供反馈。</li>
+<li><strong>怪物系统：</strong>丰富与敌人的互动，给予玩家面对多样化敌人的应对手段，丰富策略空间。</li>
+<li><strong>形成关于"精通"的乐趣循环</strong></li>
+</ul>
+
+<p><strong>2. 纸人设计目的：</strong>从游戏设计层来看，防止忍义手滥用，将重心向战斗的核心机制引导，维护游戏整体难度；优化获取与消耗循环，使系统间形成完整且自洽的闭环。</p>
+<p><strong>3. "爆竹义手"与"大蒲扇义手"设计目的：</strong>从玩家体验层来看，给予玩家对后续敌人具有针对性的道具，对不同怪物与关卡产生不同效果，优化战斗策略的灵活性；为不同时期玩家制造学习目标与多样化战斗乐趣。</p>
+
+<h3 class="article-section-title">一、忍义手设计定位与目的</h3>
+<img class="article-inline-img" src="/images/article2-img2.png" alt="忍义手设计定位">
+
+<h4 class="article-subsection-title">Knowledge层——为核心战斗系统服务的辅助型武器系统</h4>
+<img class="article-inline-img" src="/images/article2-img3.png" alt="Knowledge层分析">
+<p><strong>定位：</strong>为战斗系统而服务，并辅助主武器、代替防具系统而存在。</p>
+<p>每个忍义手都具备不同的作用与特点，玩家通过学习不同忍义手的使用方式，可以满足好奇心，获得学习的成就感与新鲜感。</p>
+<img class="article-inline-img" src="/images/article2-img4.png" alt="忍义手作用与特点">
+
+<h4 class="article-subsection-title">Rule层——对核心战斗机制的维护</h4>
+<img class="article-inline-img" src="/images/article2-img5.png" alt="Rule层分析">
+<p><strong>基本机制：</strong>获得特定道具后解锁忍义手；可在战斗中主动释放忍义手技能，释放后影响输出、节奏、位移、目标锁定等战斗要素；不同忍义手对敌人具有差异化影响；使用忍义手会消耗纸人；存在多样化的忍义手。</p>
+<img class="article-inline-img" src="/images/article2-img6.png" alt="忍义手基本机制">
+<p>忍义手的基本规则主要体现在战斗、消耗、怪物、关卡等多个系统的延伸上。忍义手系统提升了战斗的广度与深度，满足了玩家的多样化战斗需求，丰富了玩家在战斗中的策略空间与乐趣。</p>
+
+<h4 class="article-subsection-title">Skill层——驱动玩家练习技巧，收获成就感</h4>
+<img class="article-inline-img" src="/images/article2-img7.png" alt="Skill层分析">
+<p>一般的魂类游戏存在两类精通维度：策略与判断vs技术和熟练度。《只狼》忍义手的精通维度在于组合的策略性和操作精准度上。</p>
+<img class="article-inline-img" src="/images/article2-img8.png" alt="精通维度分析">
+<p>作为游戏内易上手、难精通的系统代表之一，玩家对忍义手技巧的掌握经历着<strong>思考</strong>（理解忍义手作用、思考如何搭配道具、技能）——<strong>磨练</strong>（在实战中反复试错）——<strong>掌握</strong>（将思维模式和操作本能化）——<strong>自我挑战</strong>四个阶段。忍义手增加了对战策略的广度与对战精通的深度，在提升技巧后会产生流畅且华丽的攻击模式，使战斗兼具操作性与观赏性，从而让玩家专注于自我激励和成长。</p>
+
+<h4 class="article-subsection-title">设计目的详解——结合战斗、怪物、地图等系统</h4>
+
+<p><strong>1、战斗系统层面：</strong></p>
+<img class="article-inline-img" src="/images/article2-img9.png" alt="战斗系统层面分析">
+<p><strong>①多样化的忍义手丰富战斗宽度，提升玩法多样性，为玩家带来乐趣</strong></p>
+<p>各具特色的忍义手具备不同的战斗模式与使用规则，为玩家提供了多样化战斗选择的空间，丰富了战斗的宽度，给予玩家面对游戏情况时更多应对手段，并为玩家带来不同的乐趣与战斗体验。</p>
+<img class="article-inline-img" src="/images/article2-img10.png" alt="战斗宽度分析">
+<p><strong>②玩家可进行主动反应行为，影响或掌控战斗节奏，增加控制感</strong></p>
+<p>在战斗中，玩家可通过主动使用忍义手制造更多输出的机会与空间，让玩家面对情况时有一定自由度选择自己的行为，从而用多样化的方式影响战斗节奏、增加控制感。</p>
+<img class="article-inline-img" src="/images/article2-img11.png" alt="战斗节奏控制感">
+<p><strong>③提供攻克难关的多样化方式，为低水平操作玩家提供容错选择</strong></p>
+<p>忍义手系统为掌握了不同程度技巧的玩家带来了针对高难度战斗的多样化解决方案。对于不能熟练弹刀的玩家来说，忍义手提供了核心玩法（格挡弹刀+积累架势值）之外的进攻手段，并且降低了对操作的要求。</p>
+<img class="article-inline-img" src="/images/article2-img12.png" alt="容错选择分析">
+
+<p><strong>2、地图系统层面：</strong>使探索与战斗系统相关，增加玩家探索动力，为探索提供反馈。</p>
+<p>大部分忍义手的前置道具分布在大地图的各个位置中，需要玩家积极探索才能获取。游戏通过提供"探索地图便获得能够影响战斗的装备"的正向反馈，引导玩家探索地图的细节角落，增加对世界的探索动力。</p>
+<img class="article-inline-img" src="/images/article2-img13.png" alt="地图探索系统分析">
+
+<p><strong>3、怪物系统层：</strong>丰富与怪物的互动，给予玩家面对多样化敌人的应对手段，丰富策略空间。</p>
+<p>每种忍义手都具有独特能力与作用范围，不同忍义手对不同敌人弱点可造成差异化伤害。比如，爆竹对野兽敌人具有奇效；机关伞多用于防御敌人攻击；雾鸦可用于反击敌人。不同忍义手只有在不同场景中妥善运用才能发挥出最大价值。</p>
+<img class="article-inline-img" src="/images/article2-img14.png" alt="怪物系统交互分析">
+<img class="article-inline-img" src="/images/article2-img15.png" alt="怪物弱点差异化分析">
+<p>对敌人攻击节奏以及弱点进行针对性攻击的设计，强调了玩家与敌人的交互性，让纯粹的PVE玩法同样也具备了如面对真人般进行战斗的精准度与爽快感。</p>
+
+<p><strong>4、增加战斗深度，实现"精通"的乐趣循环</strong></p>
+<img class="article-inline-img" src="/images/article2-img16.png" alt="精通乐趣循环">
+<p><strong>包含知识：</strong>操作精度（指令复杂度、空间精度、时间精度）；反应频率（主动、被动）。</p>
+
+<table class="article-analysis-table">
+<thead>
+<tr><th>指令复杂度</th><th>空间精度</th><th>时间精度</th><th>主动反应频率</th><th>被动反应频率</th></tr>
+</thead>
+<tbody>
+<tr>
+<td>与指令数、组合键、连招、长度等强相关；玩家面对游戏内情况需做出反应</td>
+<td>玩家对方向和距离的把控、方向修正、距离吸附、攻击范围、位移等要素</td>
+<td>对特定操作判定帧的精通程度</td>
+<td>拥有简单的指令集；招式相对简单</td>
+<td>敌人动作频繁；需做出频繁的防御反应</td>
+</tr>
+</tbody>
+</table>
+
+<p>精通循环，意为"通过不断的观察和学习，最终战胜挑战的过程"。忍义手系统对应着精通维度的策略完备度和操作精度。通过学习多样化的忍具用法，并将之运用在实战过程中取得胜利，会为玩家带来成长感。每一次忍义手策略的准备到在实战中操作成功所带来的正反馈可让玩家产生极强的成就感，从而产生对精通忍具的乐趣循环。</p>
+<img class="article-inline-img" src="/images/article2-img17.png" alt="精通乐趣循环示例">
+<p>如：爆竹忍义手的精进使用方式可通过使用高阶爆竹（紫烟爆竹）的延迟攻击来针对向前位移的敌人，并且玩家可在使用爆竹后立刻接技能，实现流畅且华丽的输出。</p>
+
+<h3 class="article-section-title">二、纸人消耗与获取设计</h3>
+
+<p><strong>（1）设计定位与作用：与战斗相关的消耗品</strong></p>
+<img class="article-inline-img" src="/images/article2-img18.png" alt="纸人消耗设计定位">
+<p><strong>（K）定位：</strong>用金币获取的消耗品，使用不同忍义手、技能等会消耗不同数量的纸人。</p>
+<p><strong>（R）基本机制：</strong>纸人有容量上限，玩家最多可携带19个纸人。</p>
+
+<p><strong>（2）设计目的：强调核心战斗系统，优化各个系统运作的合理性</strong></p>
+<p><strong>1、战斗系统层面：</strong>将重心向战斗的核心机制引导，防止忍义手滥用，维护游戏整体难度</p>
+<img class="article-inline-img" src="/images/article2-img19.png" alt="战斗系统层面设计目的">
+<p>使用忍义手会消耗纸人、纸人存在携带容量上限的基本机制限制了忍义手在战斗中的使用次数，目的是强调战斗的核心机制，即通过格挡弹刀积累架势值从而对敌人进行忍杀。玩家在游戏中不能无限次数地使用忍义手，意味着观察敌人节奏、找准时机格挡输出是玩家必须学习的战斗内核，无法被任何辅助机制代替。因此，游戏的难度也得到了维持。</p>
+<img class="article-inline-img" src="/images/article2-img20.png" alt="战斗核心机制维护">
+<p><strong>（S）</strong>从<strong>技巧层</strong>来看，由于在战斗中玩家可支配的纸人数量有限，就需要玩家掌握恰当的节点、有效利用忍义手和技能，从而实现高效的战斗体验。</p>
+
+<p><strong>2、经济系统层面：</strong>优化获取与消耗循环，使系统间形成完整且自洽的闭环</p>
+<img class="article-inline-img" src="/images/article2-img21.png" alt="经济系统层面分析">
+<p>纸人作为使用忍义手的消耗品，它的定位不仅平衡了玩家对钱袋的依赖、鼓励玩家投入战斗，同样还优化了金钱获取与消耗的循环，让玩家杀敌获取的金钱奖励变得更有价值的同时，防止玩家为降低死亡惩罚而大量购买钱袋而造成资源过剩，从而使经济系统与战斗系统实现自洽的闭环。</p>
+<img class="article-inline-img" src="/images/article2-img22.png" alt="经济与战斗系统闭环">
+
+<h3 class="article-section-title">三、忍义手"罗伯特的爆竹"与"大蒲扇"的设计分析</h3>
+
+<p><strong>（1）设计定位与作用：</strong></p>
+<p><strong>1、爆竹忍义手：</strong></p>
+<img class="article-inline-img" src="/images/article2-img23.png" alt="爆竹忍义手">
+<p><strong>（K）定位：</strong>需前置道具"罗伯特的爆竹"</p>
+<p><strong>（R）基本机制：</strong>对野兽生物有奇效；控场能力强；可接技能；前期可获得，获得方式安全；具有四种进阶形态</p>
+<img class="article-inline-img" src="/images/article2-img24.png" alt="爆竹忍义手机制">
+
+<p><strong>2、神隐忍义手：</strong></p>
+<img class="article-inline-img" src="/images/article2-img25.png" alt="神隐忍义手">
+<p><strong>（K）定位：</strong>需前置道具"大蒲扇"</p>
+<p><strong>（R）基本机制：</strong>对僧人有奇效；可让敌人转向；中后期获取，难度较大</p>
+
+<table class="article-analysis-table">
+<thead>
+<tr><th>忍义手</th><th>特性</th><th>解析</th></tr>
+</thead>
+<tbody>
+<tr><td>二度神隐</td><td>可连续释放两次旋风</td><td>转向后可直接被刺忍杀；对僧人的克制有利于刷仙峰寺</td></tr>
+<tr><td>捐赠薄</td><td>可在施加攻击时获得金钱/道具</td><td>—</td></tr>
+</tbody>
+</table>
+
+<p><strong>（2）设计目的</strong></p>
+<p>根据KRS分析法，《只狼》忍义手的机制与玩家行为是相互对应的，种类繁多的忍义手目的是为了对玩家产生不同的游戏预期体验。</p>
+
+<p><strong>1、战斗体验层：</strong>给予玩家对后续敌人具有针对性的道具，对不同怪物与关卡产生不同效果，优化战斗策略的灵活性</p>
+<p><strong>①爆竹忍义手</strong></p>
+<p>以火牛关卡为例，玩家主要的攻击思路是通过释放爆竹让火牛抬起前腿，从而借机在火牛腹下进行短暂控场输出，并如此循环往复的过程。相较于专注格挡积攒架势值的打法，利用爆竹惊吓敌人可以增加容错率。</p>
+<img class="article-inline-img" src="/images/article2-img26.png" alt="火牛关卡爆竹应用">
+<img class="article-inline-img" src="/images/article2-img27.png" alt="爆竹控场输出">
+<img class="article-inline-img" src="/images/article2-img28.png" alt="爆竹容错率分析">
+
+<p><strong>②大蒲扇忍义手</strong></p>
+<p>大蒲扇忍义手具有很强的控制力，可以让玩家主动改变敌人的攻击方向，从而制造进攻机会。如在面对破戒僧时，由于破戒僧攻击起手时间较长，玩家可在敌人抬手时使用大蒲扇忍义手改变敌人攻击方向，为自己制造从背后输出的机会并进行精确输出。</p>
+<img class="article-inline-img" src="/images/article2-img29.png" alt="大蒲扇忍义手应用一">
+<img class="article-inline-img" src="/images/article2-img30.png" alt="大蒲扇忍义手应用二">
+<p>大蒲扇忍义手主要适用于仙峰寺关卡内，对于僧人有奇效，可轻松让僧人死亡，减少清理杂兵的时长。</p>
+<img class="article-inline-img" src="/images/article2-img31.png" alt="大蒲扇仙峰寺应用">
+<p>但是受制于起手时间较长，大蒲扇忍义手的释放风险也相对较高，其控制转身能力在较为灵活的BOSS面前，如狮猿、苇名一心等，就显得收效甚微，甚至会暴露出防御破绽从而受伤。</p>
+<img class="article-inline-img" src="/images/article2-img32.png" alt="大蒲扇局限性分析">
+
+<p><strong>2、知识、技巧学习层：</strong>为不同时期玩家制造学习目标与多样化战斗乐趣</p>
+<p><strong>①爆竹忍义手</strong></p>
+<p>爆竹忍义手出现在游戏的前期，在拿到该忍义手后，玩家很快便可以遇到它针对的敌人（如：鬼邢部、火牛），可以看出主要目的是引导玩家学习"忍义手可控制攻击节奏"的知识，从而在后续的关卡中进行忍义手在影响战斗节奏方面的操作技能的练习与提升。</p>
+<img class="article-inline-img" src="/images/article2-img33.png" alt="爆竹忍义手学习目标">
+<p>如：玩家对火牛使用爆竹，可让火牛产生大约4秒的受击硬直时间，玩家因此学习爆竹对野兽敌人的战斗影响。</p>
+<img class="article-inline-img" src="/images/article2-img34.png" alt="爆竹对野兽敌人影响">
+<p>如：对长爪蜈蚣使用爆竹，可中断敌人起手攻击，并接技能，进行循环式输出。</p>
+
+<p><strong>②大蒲扇忍义手</strong></p>
+<p><strong>大蒲扇忍义手</strong>作为出现在中后期的忍具，它的目的主要是出于<strong>技巧层面</strong>，即：为了丰富玩家控制攻击节奏的多样性，衔接不同技能，为玩家提供更多差异化且具有趣味性的辅助攻击手段。</p>
+<img class="article-inline-img" src="/images/article2-img35.png" alt="大蒲扇技巧学习一">
+<img class="article-inline-img" src="/images/article2-img36.png" alt="大蒲扇技巧学习二">
+<img class="article-inline-img" src="/images/article2-img37.png" alt="大蒲扇技巧学习三">
+<img class="article-inline-img" src="/images/article2-img38.png" alt="大蒲扇技巧学习四">
+<p>例如：玩家可在熟练记忆敌人的进攻动作与时机，为大蒲扇的释放起手预留时间，从而释放忍义手，并迅速衔接技能。这种操作可以达到行云流水，兼具操作挑战性与视觉美观。</p>
+<p>大蒲扇的上手难度较高、消耗成本较大、对应的敌人弱点较为固定，导致该忍义手的试错成本较大，所以玩家往往不会倾向于在BOSS战中使用大蒲扇忍义手。</p>
+
+<p style="color: var(--text-muted); font-size: 0.85rem; margin-top: 2rem;"><strong>参考资料：</strong><br>
+1. 《只狼》全忍义手详解及收集攻略<br>
+2. 暗影无形，一击致命——浅谈只狼以及与魂系列的区别<br>
+3. 高手在民间，失手在阴间 - 忍义手"大蒲扇"性能解析</p>
+`
         }
       },
       {
