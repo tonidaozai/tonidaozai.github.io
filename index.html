@@ -1889,8 +1889,7 @@
 
     function openModal(index) {
       currentArticle = articles[index];
-      var activeLangBtn = document.querySelector('.lang-btn.active');
-      if (activeLangBtn) { currentLang = activeLangBtn.dataset.lang; }
+      currentLang = 'zh';
       renderArticle(currentLang);
       overlay.classList.add('open');
       document.body.classList.add('modal-open');
