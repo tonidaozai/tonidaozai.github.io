@@ -650,31 +650,42 @@
       background: var(--border);
     }
 
-    .featured-artwork {
-      margin-bottom: 2rem;
-      max-width: 760px;
+    .animation-video {
+      width: 100%;
+      aspect-ratio: 16/9;
+      border-radius: 8px;
+      background: var(--border);
     }
 
-    .featured-artwork img {
+    .animation-scroll {
+      width: 100%;
+      overflow-x: auto;
+      -webkit-overflow-scrolling: touch;
+      scroll-snap-type: x mandatory;
+      scrollbar-width: none;
+    }
+
+    .animation-scroll::-webkit-scrollbar {
+      display: none;
+    }
+
+    .animation-track {
+      display: flex;
+      gap: 1rem;
+      padding-bottom: 0.75rem;
+    }
+
+    .animation-work {
+      flex: 0 0 min(100%, 520px);
+      scroll-snap-align: start;
+    }
+
+    .animation-artwork {
       width: 100%;
       aspect-ratio: 614/358;
       object-fit: cover;
       border-radius: 8px;
       display: block;
-      background: var(--border);
-    }
-
-    .featured-artwork-desc {
-      margin-top: 0.75rem;
-      font-size: 0.875rem;
-      color: var(--text-secondary);
-      line-height: 1.6;
-    }
-
-    .animation-video {
-      width: 100%;
-      aspect-ratio: 16/9;
-      border-radius: 8px;
       background: var(--border);
     }
 
@@ -1024,10 +1035,6 @@
   <!-- Animation Section -->
   <section class="section">
     <p class="section-title reveal" data-i18n="animationTitle">Art Works</p>
-    <div class="featured-artwork reveal">
-      <img src="/images/art-2d-illustration.png" alt="2D illustration artwork">
-      <p class="featured-artwork-desc" data-i18n="artIllustrationDesc">Skilled in 2D illustration</p>
-    </div>
     <div class="animation-content reveal">
       <div class="animation-left">
         <img src="/images/bilibili-showcase.png" alt="Bilibili Animation" class="animation-image">
@@ -1042,16 +1049,26 @@
         </a>
       </div>
       <div class="animation-right">
-        <iframe
-          class="animation-video"
-          src="//player.bilibili.com/player.html?bvid=BV1SV41117xD&autoplay=0&high_quality=1"
-          scrolling="no"
-          border="0"
-          frameborder="no"
-          framespacing="0"
-          allowfullscreen="true">
-        </iframe>
-        <p class="animation-desc" data-i18n="animationDesc">Original fan animation based on "JoJo's Bizarre Adventure"</p>
+        <div class="animation-scroll">
+          <div class="animation-track">
+            <div class="animation-work">
+              <iframe
+                class="animation-video"
+                src="//player.bilibili.com/player.html?bvid=BV1SV41117xD&autoplay=0&high_quality=1"
+                scrolling="no"
+                border="0"
+                frameborder="no"
+                framespacing="0"
+                allowfullscreen="true">
+              </iframe>
+              <p class="animation-desc" data-i18n="animationDesc">Original fan animation based on "JoJo's Bizarre Adventure"</p>
+            </div>
+            <div class="animation-work">
+              <img class="animation-artwork" src="/images/art-2d-illustration.png" alt="2D illustration artwork">
+              <p class="animation-desc" data-i18n="artIllustrationDesc">Skilled in 2D illustration</p>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </section>
