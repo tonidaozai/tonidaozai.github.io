@@ -1219,6 +1219,7 @@
     function updateLanguage(lang) {
       currentLang = lang;
       document.documentElement.lang = lang === 'zh' ? 'zh-CN' : (lang === 'ja' ? 'ja' : 'en');
+      window.currentSiteLang = lang;
 
       document.querySelectorAll('.lang-btn').forEach(btn => {
         btn.classList.toggle('active', btn.dataset.lang === lang);
@@ -1230,6 +1231,12 @@
           el.innerHTML = i18n[lang][key];
         }
       });
+
+      document.querySelectorAll('.article-lang-btn').forEach(btn => {
+        btn.classList.toggle('active', btn.dataset.lang === lang);
+      });
+
+      window.dispatchEvent(new CustomEvent('site-language-change', { detail: { lang } }));
     }
 
     document.querySelectorAll('.lang-btn').forEach(btn => {
@@ -2068,13 +2075,108 @@
       }
     ];
 
-    var currentLang = 'en';
+    var translationCache = new Map();
+    var activeRenderToken = 0;
     var currentArticle = null;
+
+    function getArticleLang() {
+      return window.currentSiteLang || currentLang || 'zh';
+    }
+
+    function getLangCode(lang) {
+      return lang === 'ja' ? 'ja' : (lang === 'en' ? 'en' : 'zh-CN');
+    }
+
+    function getSourceHtml(article) {
+      return article.content.zh || article.content.en || article.content.ja || '';
+    }
+
+    function getCachedTranslation(article, lang) {
+      return translationCache.get(article.title.zh + '::' + lang);
+    }
+
+    function setCachedTranslation(article, lang, html) {
+      translationCache.set(article.title.zh + '::' + lang, html);
+    }
+
+    function collectTextNodes(root) {
+      var walker = document.createTreeWalker(root, NodeFilter.SHOW_TEXT, {
+        acceptNode: function(node) {
+          if (!node.nodeValue || !node.nodeValue.trim()) {
+            return NodeFilter.FILTER_REJECT;
+          }
+          return NodeFilter.FILTER_ACCEPT;
+        }
+      });
+      var nodes = [];
+      var currentNode;
+      while ((currentNode = walker.nextNode())) {
+        nodes.push(currentNode);
+      }
+      return nodes;
+    }
+
+    function translateText(text, lang) {
+      var trimmed = text.trim();
+      if (!trimmed || lang === 'zh') {
+        return Promise.resolve(text);
+      }
+
+      var leading = text.match(/^\s*/)[0];
+      var trailing = text.match(/\s*$/)[0];
+      var cacheKey = lang + '::' + trimmed;
+      if (translationCache.has(cacheKey)) {
+        return Promise.resolve(leading + translationCache.get(cacheKey) + trailing);
+      }
+
+      var url = 'https://translate.googleapis.com/translate_a/single?client=gtx&sl=zh-CN&tl='
+        + encodeURIComponent(getLangCode(lang))
+        + '&dt=t&q='
+        + encodeURIComponent(trimmed);
+
+      return fetch(url)
+        .then(function(response) {
+          if (!response.ok) throw new Error('Translate request failed');
+          return response.json();
+        })
+        .then(function(data) {
+          var translated = (data[0] || []).map(function(part) {
+            return part[0];
+          }).join('');
+          translationCache.set(cacheKey, translated || trimmed);
+          return leading + (translated || trimmed) + trailing;
+        });
+    }
+
+    function translateArticleContent(article, lang, renderToken) {
+      var cachedHtml = getCachedTranslation(article, lang);
+      if (cachedHtml) {
+        if (renderToken === activeRenderToken) content.innerHTML = cachedHtml;
+        return Promise.resolve();
+      }
+
+      var nodes = collectTextNodes(content);
+      var chain = Promise.resolve();
+      nodes.forEach(function(node) {
+        chain = chain.then(function() {
+          return translateText(node.nodeValue, lang).then(function(translated) {
+            if (renderToken === activeRenderToken) {
+              node.nodeValue = translated;
+            }
+          });
+        });
+      });
+
+      return chain.then(function() {
+        if (renderToken === activeRenderToken) {
+          setCachedTranslation(article, lang, content.innerHTML);
+        }
+      });
+    }
 
     function openModal(index) {
       currentArticle = articles[index];
-      currentLang = 'zh';
-      renderArticle(currentLang);
+      renderArticle(getArticleLang());
       overlay.classList.add('open');
       document.body.classList.add('modal-open');
     }
@@ -2086,10 +2188,29 @@
 
     function renderArticle(lang) {
       if (!currentArticle) return;
+      var renderToken = ++activeRenderToken;
       cover.src = currentArticle.cover;
-      tag.textContent = currentArticle.tag[lang];
-      title.textContent = currentArticle.title[lang];
-      content.innerHTML = currentArticle.content[lang];
+      tag.textContent = currentArticle.tag[lang] || currentArticle.tag.zh;
+      title.textContent = currentArticle.title[lang] || currentArticle.title.zh;
+      content.innerHTML = getSourceHtml(currentArticle);
+
+      if (lang !== 'zh') {
+        content.setAttribute('aria-busy', 'true');
+        translateArticleContent(currentArticle, lang, renderToken)
+          .catch(function(error) {
+            console.error('[ArticleModal] translate error:', error);
+            if (renderToken === activeRenderToken) {
+              content.innerHTML = getSourceHtml(currentArticle);
+            }
+          })
+          .finally(function() {
+            if (renderToken === activeRenderToken) {
+              content.removeAttribute('aria-busy');
+            }
+          });
+      } else {
+        content.removeAttribute('aria-busy');
+      }
 
       // update lang button active states
       document.querySelectorAll('.article-lang-btn').forEach(function(btn) {
@@ -2116,9 +2237,14 @@
 
     document.querySelectorAll('.article-lang-btn').forEach(function(btn) {
       btn.addEventListener('click', function() {
-        currentLang = btn.dataset.lang;
-        renderArticle(currentLang);
+        updateLanguage(btn.dataset.lang);
       });
+    });
+
+    window.addEventListener('site-language-change', function(e) {
+      if (overlay.classList.contains('open')) {
+        renderArticle(e.detail.lang);
+      }
     });
   })();
   } catch(e) {
